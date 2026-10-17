@@ -182,6 +182,24 @@
   }
 }
 
+@keyframes wiggle {
+  0%,
+  100% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(14deg);
+  }
+  75% {
+    transform: rotate(-8deg);
+  }
+}
+
+.animate-wiggle {
+  animation: wiggle 2.4s ease-in-out infinite;
+  transform-origin: 70% 70%;
+}
+
 @keyframes heartbeat {
   0%,
   100% {

@@ -20,21 +20,26 @@ export const translations: Record<Locale, typeof en> = { en, es }
 // Detect the locale from an Astro URL pathname ("/" -> en, "/es/..." -> es).
 export function localeFromPath(pathname: string): Locale {
   const segment = pathname.split('/').filter(Boolean)[0]
+
   return (LOCALES as readonly string[]).includes(segment) ? (segment as Locale) : DEFAULT_LOCALE
 }
 
 // Strip the locale prefix from a pathname ("/es/case-study/x" -> "/case-study/x", "/es" -> "/").
 export function stripLocale(pathname: string, locale: Locale): string {
   const segments = pathname.split('/').filter(Boolean)
+
   if (segments[0] === locale) segments.shift()
   const rest = segments.join('/')
+
   return rest ? `/${rest}` : '/'
 }
 
 // Build the equivalent path in the other locale ("/case-study/x" -> "/es/case-study/x").
 export function localizePath(pathname: string, target: Locale): string {
   const clean = stripLocale(pathname, localeFromPath(pathname))
+
   if (target === DEFAULT_LOCALE) return clean
+
   return clean === '/' ? `/${target}` : `/${target}${clean}`
 }
 

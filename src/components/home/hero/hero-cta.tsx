@@ -9,6 +9,7 @@ type HeroCtaProps = {
 
 const HeroCta = ({ locale = 'en' }: HeroCtaProps) => {
   const t = useTranslations(locale)
+
   // No dedicated contact page: CTAs anchor to the booking form (which sends via WhatsApp)
   // and to the credentials block (CV + thesis downloads).
   const contactHref = '#select-service'

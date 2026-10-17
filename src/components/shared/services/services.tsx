@@ -22,10 +22,12 @@ type ServicesProps = {
 
 const Services = ({ locale = 'en' }: ServicesProps) => {
   const t = useTranslations(locale)
+
   const SERVICES = t.services.list.map((service, index) => ({
     ...service,
     image: SERVICE_IMAGES[index % SERVICE_IMAGES.length]
   }))
+
   const containerRef = useRef<HTMLDivElement>(null)
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null)
   const [displayedIndex, setDisplayedIndex] = useState<number | null>(null)
@@ -109,7 +111,9 @@ const Services = ({ locale = 'en' }: ServicesProps) => {
                       {service.tools.map((tool, toolIndex) => (
                         <span key={tool} className='flex items-center gap-2'>
                           {tool}
-                          {toolIndex < service.tools.length - 1 && <span className='text-accent'>✦</span>}
+                          {toolIndex < service.tools.length - 1 && (
+                            <span className='bg-accent inline-block size-1.5 shrink-0 rounded-full' />
+                          )}
                         </span>
                       ))}
                     </p>

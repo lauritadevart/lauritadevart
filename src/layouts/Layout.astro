@@ -9,7 +9,6 @@ import Footer from '@/components/layout/footer.astro'
 import NavDock from '@/components/layout/nav-dock'
 import CustomCursor from '@/components/layout/custom-cursor'
 import ScrollProfileToast from '@/components/layout/scroll-profile-toast'
-import LanguageSwitcher from '@/components/layout/language-switcher.astro'
 import { Toaster } from '@/components/ui/sonner'
 import type { Locale } from '@/i18n'
 
@@ -88,7 +87,6 @@ const pathname = Astro.url.pathname
     <Toaster client:load />
     <ScrollProfileToast client:load pathname={pathname} locale={locale} />
     <NavDock client:load pathname={pathname} locale={locale} />
-    <LanguageSwitcher pathname={pathname} locale={locale} />
     <CustomCursor client:load />
   </body>
 </html>

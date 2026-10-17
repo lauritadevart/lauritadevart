@@ -1,9 +1,10 @@
 ---
+import { Hand } from 'lucide-react'
+
 import AvailabilityBadge from '@/components/shared/availability-badge'
 import GreetingWord from '@/components/home/hero/greeting-word'
 import HeroCta from '@/components/home/hero/hero-cta'
 import IdCard from '@/components/ui/id-card'
-import { AUTHOR } from '@/consts'
 import { useTranslations, type Locale } from '@/i18n'
 
 interface Props {
@@ -20,7 +21,8 @@ const t = useTranslations(locale)
       <div class='space-y-6 lg:max-w-lg'>
         <AvailabilityBadge className='h-6.5 gap-1 rounded-full' text={t.common.availableForWork} locale={locale} />
         <h1 class='mb-2 text-4xl font-semibold tracking-tight sm:text-5xl lg:text-[64px] lg:font-bold'>
-          <GreetingWord client:load locale={locale} />{t.hero.name} 👋🏻
+          <GreetingWord client:load locale={locale} />{t.hero.name}
+          <Hand className='text-accent ml-2 inline-block size-9 animate-wiggle align-middle sm:size-11' strokeWidth={2.2} />
         </h1>
         <p class='text-muted-foreground text-xl font-medium sm:text-2xl lg:text-3xl'>{t.hero.role}</p>
         <p class='text-accent text-lg font-medium sm:text-xl'>{t.hero.subtitle}</p>

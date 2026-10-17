@@ -6,6 +6,7 @@ const caseStudies = defineCollection({
   loader: glob({
     pattern: '**/*.{md,mdx}',
     base: './src/content/case-studies',
+
     // The EN and ES variants of a case study share the same frontmatter `slug`, and the
     // default id uses `data.slug`, which made the two locales overwrite each other in the
     // content store. Derive the id from the file path so both variants coexist.

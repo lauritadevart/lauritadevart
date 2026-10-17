@@ -6,22 +6,27 @@ import { Badge } from '@/components/ui/badge'
 import { useTranslations, type Locale } from '@/i18n'
 import { cn } from '@/lib/utils'
 
+// Folder photos — Cuba (replaced the template's Spain shots).
+// Sources (all CC0 / public domain via Wikimedia Commons):
+//   folder-01.jpg — "Old Havana, Cuba" by Scott Fleming
+//   folder-02.jpg — "Havana, Cuba" by Michele Spinnato
+//   folder-03.jpg — "Street in Trinidad, Cuba 2024" by Dudva
 const PHOTOS = [
   {
-    src: '/images/about-me/folder-01.webp',
+    src: '/images/about-me/folder-01.jpg',
     collapsed: 'rotate-[2deg] -translate-y-[48%]',
     hover:
       'group-hover/folder:rotate-[3deg] group-hover/folder:-translate-y-[52%] group-hover/folder:translate-x-1 group-hover/folder:scale-90',
     expanded: '-translate-x-16 -rotate-[10deg] -translate-y-18 scale-110'
   },
   {
-    src: '/images/about-me/folder-02.webp',
+    src: '/images/about-me/folder-02.jpg',
     collapsed: '-translate-y-[43%]',
     hover: 'group-hover/folder:-translate-y-[47%] group-hover/folder:scale-90',
     expanded: '-translate-y-18 scale-110'
   },
   {
-    src: '/images/about-me/folder-03.webp',
+    src: '/images/about-me/folder-03.jpg',
     collapsed: '-rotate-[2deg] -translate-y-[38%]',
     hover:
       'group-hover/folder:-rotate-[3deg] group-hover/folder:-translate-y-[42%] group-hover/folder:-translate-x-1 group-hover/folder:scale-90',
@@ -57,7 +62,13 @@ const TripFolderCard = ({ locale = 'en' }: TripFolderCardProps) => {
                 expanded ? photo.expanded : cn(photo.collapsed, photo.hover)
               )}
             >
-              <img src={photo.src} alt='folder images' className='object-cover' />
+              <img
+                src={photo.src}
+                alt={`${t.about.folder.title} photo ${i + 1}`}
+                loading='lazy'
+                decoding='async'
+                className='h-full w-full object-cover'
+              />
             </div>
           ))}
 
@@ -68,7 +79,25 @@ const TripFolderCard = ({ locale = 'en' }: TripFolderCardProps) => {
               expanded && 'transform-[perspective(4000px)_rotateX(-45deg)]'
             )}
           >
-            <img src='/images/about-me/folder-front.webp' alt='folder front' className='w-40' />
+            <img
+              src='/images/about-me/folder-front.webp'
+              alt='folder front'
+              loading='lazy'
+              decoding='async'
+              className='w-40'
+            />
+
+            {/* Country label sticker — covers the location printed on the folder illustration */}
+            <span
+              className={cn(
+                '[font-family:var(--font-handwritten)] text-neutral-800',
+                'absolute top-[34%] left-1/2 -translate-x-1/2 -rotate-2',
+                'rounded-md border border-black/10 bg-white px-2.5 py-0.5',
+                'text-sm shadow-sm sm:text-base'
+              )}
+            >
+              {t.about.folder.title}
+            </span>
           </div>
         </div>
       </CardContent>

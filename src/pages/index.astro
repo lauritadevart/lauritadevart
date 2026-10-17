@@ -6,7 +6,6 @@ import Skills from '@/components/home/skills/skills.astro'
 import FeaturedWorks from '@/components/shared/featured-works/featured-works.astro'
 import Experience from '@/components/home/experience/experience.astro'
 import Services from '@/components/shared/services/services'
-import Testimonials from '@/components/shared/testimonials/testimonials'
 import HireMe from '@/components/home/hire-me/hire-me.astro'
 import SelectService from '@/components/home/select-service/select-service.astro'
 
@@ -59,7 +58,6 @@ const schema = {
   <FeaturedWorks caseStudies={caseStudies} locale={locale} />
   <Experience locale={locale} />
   <Services client:visible locale={locale} />
-  <Testimonials client:visible locale={locale} />
   <HireMe locale={locale} />
   <SelectService locale={locale} />
 </Layout>

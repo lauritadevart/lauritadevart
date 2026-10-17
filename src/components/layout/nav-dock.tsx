@@ -2,7 +2,7 @@ import { Separator } from '@/components/ui/separator'
 import ThemeToggle from '@/components/layout/theme-toggle'
 
 import { useActiveSection } from '@/hooks/use-active-section'
-import { useTranslations, type Locale } from '@/i18n'
+import { LOCALE_LABELS, localizePath, useTranslations, type Locale } from '@/i18n'
 
 import { cn } from '@/lib/utils'
 
@@ -21,11 +21,21 @@ const NavDock = ({ pathname, locale = 'en' }: NavDockProps) => {
   const t = useTranslations(locale)
   const basePath = pathname.replace(/^\/es(?=\/|$)/, '') || '/'
 
+  // Language switcher lives inside the dock (bottom bar on mobile, side rail on desktop),
+  // right next to the light/dark mode toggle.
+  const targetLocale: Locale = locale === 'es' ? 'en' : 'es'
+  const languagePath = localizePath(pathname, targetLocale)
+  const languageLabel = targetLocale === 'es' ? t.langSwitch.toEs : t.langSwitch.toEn
+
+  const labelClassName =
+    'hidden overflow-hidden text-sm whitespace-nowrap transition-all duration-300 ease-out lg:inline-block lg:max-w-0 lg:opacity-0 lg:group-hover:ml-2 lg:group-hover:max-w-24 lg:group-hover:opacity-100'
+
   const NAV_ITEMS = [
     { href: '/#about', id: 'about', label: t.nav.about, icon: UserIcon },
     { href: '/#featured-works', id: 'featured-works', label: t.nav.work, icon: RulerPenIcon },
     { href: '/#experience', id: 'experience', label: t.nav.experience, icon: ProgrammingIcon },
     { href: '/#pricing', id: 'pricing', label: t.nav.pricing, icon: TagPriceIcon },
+
     // There is no contact page anymore — Contact scrolls to the booking form (sends via WhatsApp).
     { href: '/#select-service', id: 'select-service', label: t.nav.contact, icon: MailIcon }
   ]
@@ -64,10 +74,34 @@ const NavDock = ({ pathname, locale = 'en' }: NavDockProps) => {
         <Separator className='hidden lg:block' />
 
         <ThemeToggle className='text-muted-foreground hover:text-accent hover:bg-accent/10 flex h-8 items-center overflow-hidden rounded-md px-2 transition-colors max-lg:h-7'>
-          <span className='hidden overflow-hidden text-sm whitespace-nowrap transition-all duration-300 ease-out lg:inline-block lg:max-w-0 lg:opacity-0 lg:group-hover:ml-2 lg:group-hover:max-w-24 lg:group-hover:opacity-100'>
-            {t.nav.mode}
-          </span>
+          <span className={labelClassName}>{t.nav.mode}</span>
         </ThemeToggle>
+
+        <a
+          href={languagePath}
+          hrefLang={targetLocale}
+          aria-label={languageLabel}
+          className='text-muted-foreground hover:text-accent hover:bg-accent/10 flex h-8 items-center overflow-hidden rounded-md px-2 transition-colors max-lg:h-7'
+        >
+          <svg
+            xmlns='http://www.w3.org/2000/svg'
+            viewBox='0 0 24 24'
+            fill='none'
+            stroke='currentColor'
+            stroke-width='2'
+            stroke-linecap='round'
+            stroke-linejoin='round'
+            className='size-4 shrink-0'
+            aria-hidden='true'
+          >
+            <circle cx='12' cy='12' r='10'></circle>
+            <path d='M2 12h20'></path>
+            <path
+              d='M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z'
+            ></path>
+          </svg>
+          <span className={labelClassName}>{LOCALE_LABELS[targetLocale]}</span>
+        </a>
       </div>
     </nav>
   )

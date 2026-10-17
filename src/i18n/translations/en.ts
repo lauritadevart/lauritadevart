@@ -63,8 +63,8 @@ export const en = {
       one: 'Keep hovering…',
       four: "You're persistent!",
       five: 'Haha, you found them all!',
-      end: 'Okay, I give up 🙃',
-      title: 'I have a surprise for you 🙃'
+      end: 'Okay, I give up',
+      title: 'I have a surprise for you'
     }
   },
 
@@ -149,11 +149,11 @@ export const en = {
       {
         company: 'CUJAE',
         role: 'Automation Engineer',
-        period: 'Graduated',
-        status: 'Education',
-        achievement: 'Degree in Automation Engineering — strong technical problem-solving foundation',
+        period: '2025',
+        status: 'Graduated',
+        achievement: 'Degree in Automation Engineering (2025) — strong technical problem-solving foundation',
         description:
-          'Graduated from the Universidad Tecnológica de La Habana José Antonio Echeverría (CUJAE) with a degree in Automation Engineering, giving me a rigorous programming and systems mindset.'
+          'Graduated in 2025 from the Universidad Tecnológica de La Habana José Antonio Echeverría (CUJAE) with a degree in Automation Engineering, giving me a rigorous programming and systems mindset.'
       }
     ]
   },
@@ -202,31 +202,6 @@ export const en = {
     ]
   },
 
-  testimonials: {
-    eyebrow: 'Testimonials',
-    title: 'Kind words from people I have worked with',
-    list: [
-      {
-        quote:
-          'Laura rebuilt our WordPress store and the difference was immediate — faster, cleaner, and finally easy for our team to manage.',
-        name: 'Client Name',
-        role: 'E-commerce Owner'
-      },
-      {
-        quote:
-          'She delivered our Shopify site on time and handled every customization we asked for. Communication was clear throughout.',
-        name: 'Client Name',
-        role: 'Founder'
-      },
-      {
-        quote:
-          'Our search traffic grew noticeably after Laura optimized the site. She really knows her SEO and her WordPress.',
-        name: 'Client Name',
-        role: 'Marketing Manager'
-      }
-    ]
-  },
-
   pricing: {
     eyebrow: 'How it works',
     title: 'No agencies — just me, fully in on your project',
@@ -250,7 +225,7 @@ export const en = {
   },
 
   selectService: {
-    stepTitles: { 1: 'Select Service', 2: 'Choose Time', 3: 'Your Details' },
+    stepTitles: { 1: 'Select Service', 2: 'Your Details' },
     stepOf: 'Step',
     of: 'of',
     back: 'Back',
@@ -258,16 +233,13 @@ export const en = {
     book: 'Book via WhatsApp',
     secureNote: 'Your details are only used to prepare your WhatsApp message.',
     confirmedTitle: 'Ready to send',
-    confirmedText: (name: string, service: string, date: string, time: string) =>
-      `Thank you, ${name}. Your ${service} is scheduled for ${date} at ${time}. We opened WhatsApp with your details — just press send and I will get back to you as soon as possible.`,
+    confirmedText: (name: string, service: string) =>
+      `Thank you, ${name}. Your ${service} is booked — WhatsApp is open with your details, just press send and I will get back to you as soon as possible.`,
     confirmedWhatsapp: 'Open WhatsApp',
     bookAnother: 'Book Another',
-    morning: 'Morning',
-    afternoon: 'Afternoon & Evening',
     whatsapp: {
-      greeting: 'Hi Laura! I would like to book an appointment through your portfolio website.',
+      greeting: 'Hi Laura! I would like to book a service through your portfolio website.',
       service: 'Service',
-      when: 'Date & time',
       name: 'Name',
       email: 'Email',
       phone: 'Phone',
@@ -275,27 +247,32 @@ export const en = {
     },
     services: [
       {
+        id: 'web-development',
+        title: 'Web Development (Full Code)',
+        price: '$300',
+        description: 'Hand-coded websites with modern frameworks — no page builders'
+      },
+      {
         id: 'wordpress-development',
         title: 'WordPress Development',
-        price: '$240',
+        price: '$200',
         description: 'End-to-end WordPress site, design to launch'
       },
       {
         id: 'ecommerce-store',
         title: 'E-commerce Store Setup',
-        price: '$180',
+        price: '$250',
         description: 'WooCommerce or Shopify, live and ready to sell'
       },
       {
         id: 'seo-optimization',
         title: 'SEO & Optimization',
-        price: '$120',
+        price: '$100',
         description: 'Improve rankings, speed, and site structure'
       }
     ],
     details: {
       service: 'Service',
-      dateTime: 'Date & Time',
       price: 'Price',
       fullName: 'Full Name *',
       namePlaceholder: 'Your name',
@@ -311,8 +288,8 @@ export const en = {
 
   credentials: {
     eduTitle: 'Automation Engineering degree',
-    eduInstitution: 'CUJAE · Havana, Cuba',
-    eduText: 'My degree in Automation Engineering (CUJAE) gives me a rigorous, systems-level approach to problem solving — it is a big part of how I plan, build, and debug.',
+    eduInstitution: 'CUJAE · Havana, Cuba · 2025',
+    eduText: 'I graduated in 2025 with a degree in Automation Engineering from CUJAE, which gives me a rigorous, systems-level approach to problem solving — it is a big part of how I plan, build, and debug.',
     thesisTitle: 'Automation Engineering thesis',
     thesisDesc: 'Download my final degree thesis on automation and control (PDF).',
     thesisCta: 'Download thesis',

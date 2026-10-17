@@ -1,16 +1,13 @@
 import { useState } from 'react'
 
-import { format } from 'date-fns'
 import { ArrowLeftIcon, CheckIcon, ChevronRightIcon } from 'lucide-react'
 
 import { Button } from '@/components/ui/button'
-import { ScrollArea } from '@/components/ui/scroll-area'
 import { cn } from '@/lib/utils'
 import { useTranslations, type Locale } from '@/i18n'
-import ChooseTimeStep from '@/components/home/select-service/choose-time-step'
 import DetailsStep from '@/components/home/select-service/details-step'
 
-const TOTAL_STEPS = 3
+const TOTAL_STEPS = 2
 
 type ServiceStepCardProps = {
   locale?: Locale
@@ -24,27 +21,21 @@ const ServiceStepCard = ({ locale = 'en' }: ServiceStepCardProps) => {
 
   const [step, setStep] = useState(1)
   const [selectedServiceId, setSelectedServiceId] = useState<string | null>(null)
-  const [selectedDate, setSelectedDate] = useState<Date | undefined>(undefined)
-  const [selectedTime, setSelectedTime] = useState<string | null>(null)
   const [bookingName, setBookingName] = useState<string | null>(null)
   const [whatsappUrl, setWhatsappUrl] = useState<string | null>(null)
 
   const selectedService = SERVICES.find(service => service.id === selectedServiceId)
 
-  const canAdvance = step === 1 ? Boolean(selectedServiceId) : step === 2 ? Boolean(selectedDate && selectedTime) : true
+  const canAdvance = Boolean(selectedServiceId)
 
   const handleReset = () => {
     setStep(1)
     setSelectedServiceId(null)
-    setSelectedDate(undefined)
-    setSelectedTime(null)
     setBookingName(null)
     setWhatsappUrl(null)
   }
 
   if (bookingName) {
-    const formattedDate = selectedDate ? format(selectedDate, locale === 'es' ? "EEE, d 'de' MMM" : 'EEE, MMM d') : ''
-
     return (
       <div className='bg-card relative flex min-h-125 flex-col items-center justify-center space-y-4 rounded-3xl p-6 text-center shadow-sm'>
         <span className='bg-accent mb-7 flex size-18 shrink-0 items-center justify-center rounded-full text-white'>
@@ -54,7 +45,7 @@ const ServiceStepCard = ({ locale = 'en' }: ServiceStepCardProps) => {
         <div className='mb-8 space-y-3'>
           <h3 className='text-[24px] font-medium'>{t.selectService.confirmedTitle}</h3>
           <p className='text-foreground text-[15px]'>
-            {t.selectService.confirmedText(bookingName, selectedService?.title ?? '', formattedDate, selectedTime ?? '')}
+            {t.selectService.confirmedText(bookingName, selectedService?.title ?? '')}
           </p>
         </div>
 
@@ -118,60 +109,46 @@ const ServiceStepCard = ({ locale = 'en' }: ServiceStepCardProps) => {
           {t.selectService.back}
         </Button>
 
-        <ScrollArea className='h-83'>
-          {step === 1 && (
-            <div className='space-y-3'>
-              {SERVICES.map(service => {
-                const selected = selectedServiceId === service.id
+        {/* Every step renders in full — no inner scroll area. */}
+        <div className='space-y-3'>
+          {step === 1 &&
+            SERVICES.map(service => {
+              const selected = selectedServiceId === service.id
 
-                return (
-                  <Button
-                    key={service.id}
-                    variant='outline'
-                    onClick={() => setSelectedServiceId(service.id)}
+              return (
+                <Button
+                  key={service.id}
+                  variant='outline'
+                  onClick={() => setSelectedServiceId(service.id)}
+                  className={cn(
+                    'bg-card hover:bg-card h-auto w-full items-start justify-start gap-3 rounded-xl p-4 text-left whitespace-normal',
+                    selected
+                      ? 'border-accent bg-(--background-darker) hover:bg-(--background-darker)'
+                      : 'border-border'
+                  )}
+                >
+                  <span
                     className={cn(
-                      'bg-card hover:bg-card h-auto w-full items-start justify-start gap-3 rounded-xl p-4 text-left whitespace-normal',
-                      selected
-                        ? 'border-accent bg-(--background-darker) hover:bg-(--background-darker)'
-                        : 'border-border'
+                      'mt-2 size-2.5 shrink-0 rounded-full',
+                      selected ? 'bg-accent' : 'bg-muted-foreground'
                     )}
-                  >
-                    <span
-                      className={cn(
-                        'mt-2 size-2.5 shrink-0 rounded-full',
-                        selected ? 'bg-accent' : 'bg-muted-foreground'
-                      )}
-                    />
-                    <span className='flex-1 space-y-1'>
-                      <span className='flex items-center justify-between gap-2'>
-                        <span className='text-base font-semibold'>{service.title}</span>
-                        <span className={cn('text-card-foreground font-semibold', selected && 'text-accent')}>
-                          {service.price}
-                        </span>
+                  />
+                  <span className='flex-1 space-y-1'>
+                    <span className='flex items-center justify-between gap-2'>
+                      <span className='text-base font-semibold'>{service.title}</span>
+                      <span className={cn('text-card-foreground font-semibold', selected && 'text-accent')}>
+                        {service.price}
                       </span>
-                      <span className='text-muted-foreground block text-sm'>{service.description}</span>
                     </span>
-                  </Button>
-                )
-              })}
-            </div>
-          )}
+                    <span className='text-muted-foreground block text-sm'>{service.description}</span>
+                  </span>
+                </Button>
+              )
+            })}
 
           {step === 2 && (
-            <ChooseTimeStep
-              selectedDate={selectedDate}
-              onSelectDate={setSelectedDate}
-              selectedTime={selectedTime}
-              onSelectTime={setSelectedTime}
-              locale={locale}
-            />
-          )}
-
-          {step === 3 && (
             <DetailsStep
               service={selectedService}
-              date={selectedDate}
-              time={selectedTime}
               onSuccess={(booking, url) => {
                 setBookingName(booking)
                 setWhatsappUrl(url)
@@ -179,10 +156,10 @@ const ServiceStepCard = ({ locale = 'en' }: ServiceStepCardProps) => {
               locale={locale}
             />
           )}
-        </ScrollArea>
+        </div>
 
         <div className='flex min-h-21 flex-col justify-center space-y-2'>
-          {step < 3 ? (
+          {step < TOTAL_STEPS ? (
             <div className='flex justify-center'>
               <Button
                 variant='secondary'

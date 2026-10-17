@@ -1,7 +1,6 @@
 import { useState } from 'react'
 import type { FormEvent } from 'react'
 
-import { format } from 'date-fns'
 import { toast } from 'sonner'
 
 import { Input } from '@/components/ui/input'
@@ -12,33 +11,27 @@ import { useTranslations, type Locale } from '@/i18n'
 
 type DetailsStepProps = {
   service: { title: string; price: string } | undefined
-  date: Date | undefined
-  time: string | null
   onSuccess: (name: string, whatsappUrl: string) => void
   locale?: Locale
 }
 
-const DetailsStep = ({ service, date, time, onSuccess, locale = 'en' }: DetailsStepProps) => {
+const DetailsStep = ({ service, onSuccess, locale = 'en' }: DetailsStepProps) => {
   const t = useTranslations(locale)
   const [name, setName] = useState('')
   const [email, setEmail] = useState('')
   const [phone, setPhone] = useState('')
   const [notes, setNotes] = useState('')
 
-  const formattedDate = date ? format(date, locale === 'es' ? "EEE, d 'de' MMM" : 'EEE, MMM d') : ''
-  const dateTimeValue = date && time ? `${formattedDate} · ${time}` : '—'
-  const priceValue = service?.price ?? '—'
-
   const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault()
 
     // Predefined WhatsApp message built from the booking + contact fields.
     const w = t.selectService.whatsapp
+
     const lines = [
       w.greeting,
       '',
       `${w.service}: ${service?.title ?? '—'}${service ? ` · ${service.price}` : ''}`,
-      `${w.when}: ${dateTimeValue}`,
       `${w.name}: ${name.trim()}`,
       `${w.email}: ${email.trim()}`
     ]
@@ -71,20 +64,10 @@ const DetailsStep = ({ service, date, time, onSuccess, locale = 'en' }: DetailsS
         </div>
 
         <div className='flex items-start gap-2'>
-          <span className='mt-1.5 size-2.5 shrink-0 rounded-full bg-sky-600' />
-          <div>
-            <p className='text-muted-foreground text-[10px] tracking-wide uppercase'>
-              {t.selectService.details.dateTime}
-            </p>
-            <p className='text-sm'>{dateTimeValue}</p>
-          </div>
-        </div>
-
-        <div className='flex items-start gap-2'>
           <span className='bg-accent mt-1.5 size-2.5 shrink-0 rounded-full' />
           <div>
             <p className='text-muted-foreground text-[10px] tracking-wide uppercase'>{t.selectService.details.price}</p>
-            <p className='text-accent text-sm font-bold'>{priceValue}</p>
+            <p className='text-accent text-sm font-bold'>{service?.price ?? '—'}</p>
           </div>
         </div>
       </div>

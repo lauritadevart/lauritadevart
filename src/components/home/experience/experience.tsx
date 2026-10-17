@@ -21,6 +21,7 @@ const ExperienceTimeline = ({ locale = 'en' }: ExperienceTimelineProps) => {
     stack: t.skills.categories.map(c => c.name).slice(index, index + 4),
     achievement: item.achievement,
     description: item.description,
+
     // The Automation Engineering degree gets a highlighted treatment in the timeline.
     highlight: item.company === 'CUJAE'
   }))

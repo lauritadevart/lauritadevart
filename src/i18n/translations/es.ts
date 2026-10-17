@@ -65,8 +65,8 @@ export const es: Dictionary = {
       one: 'Sigue pasando el cursor…',
       four: '¡Eres persistente!',
       five: '¡Ja, los encontraste todos!',
-      end: 'Vale, me rindo 🙃',
-      title: 'Tengo una sorpresa para ti 🙃'
+      end: 'Vale, me rindo',
+      title: 'Tengo una sorpresa para ti'
     }
   },
 
@@ -151,11 +151,11 @@ export const es: Dictionary = {
       {
         company: 'CUJAE',
         role: 'Ingeniera en Automática',
-        period: 'Titulada',
-        status: 'Formación',
-        achievement: 'Ingeniería en Automática y Control — base sólida en resolución técnica de problemas',
+        period: '2025',
+        status: 'Titulada',
+        achievement: 'Ingeniería en Automática (2025) — base sólida en resolución técnica de problemas',
         description:
-          'Me gradué en la Universidad Tecnológica de La Habana José Antonio Echeverría (CUJAE) en Ingeniería en Automática y Control, lo que me dio una mentalidad rigurosa de programación y sistemas.'
+          'Me gradué en 2025 en la Universidad Tecnológica de La Habana José Antonio Echeverría (CUJAE) en Ingeniería en Automática, lo que me dio una mentalidad rigurosa de programación y sistemas.'
       }
     ]
   },
@@ -204,31 +204,6 @@ export const es: Dictionary = {
     ]
   },
 
-  testimonials: {
-    eyebrow: 'Testimonios',
-    title: 'Palabras amables de personas con las que he trabajado',
-    list: [
-      {
-        quote:
-          'Laura reconstruyó nuestra tienda WordPress y la diferencia fue inmediata: más rápida, más limpia y por fin fácil de gestionar para nuestro equipo.',
-        name: 'Nombre del cliente',
-        role: 'Propietaria de e-commerce'
-      },
-      {
-        quote:
-          'Entregó nuestro sitio Shopify a tiempo y resolvió todas las personalizaciones que pedimos. La comunicación fue clara durante todo el proceso.',
-        name: 'Nombre del cliente',
-        role: 'Fundadora'
-      },
-      {
-        quote:
-          'Nuestro tráfico orgánico creció notablemente tras optimizar el sitio con Laura. Conoce muy bien el SEO y el WordPress.',
-        name: 'Nombre del cliente',
-        role: 'Responsable de marketing'
-      }
-    ]
-  },
-
   pricing: {
     eyebrow: 'Cómo funciona',
     title: 'Sin agencias — solo yo, totalmente implicada en tu proyecto',
@@ -252,7 +227,7 @@ export const es: Dictionary = {
   },
 
   selectService: {
-    stepTitles: { 1: 'Elige un servicio', 2: 'Elige hora', 3: 'Tus datos' },
+    stepTitles: { 1: 'Elige un servicio', 2: 'Tus datos' },
     stepOf: 'Paso',
     of: 'de',
     back: 'Atrás',
@@ -260,16 +235,13 @@ export const es: Dictionary = {
     book: 'Reservar por WhatsApp',
     secureNote: 'Tus datos solo se usan para preparar tu mensaje de WhatsApp.',
     confirmedTitle: 'Listo para enviar',
-    confirmedText: (name: string, service: string, date: string, time: string) =>
-      `Gracias, ${name}. Tu ${service} queda para el ${date} a las ${time}. Hemos abierto WhatsApp con tus datos — solo pulsa enviar y te responderé lo antes posible.`,
+    confirmedText: (name: string, service: string) =>
+      `Gracias, ${name}. Tu servicio de ${service} queda reservado — WhatsApp está abierto con tus datos, solo pulsa enviar y te responderé lo antes posible.`,
     confirmedWhatsapp: 'Abrir WhatsApp',
-    bookAnother: 'Reservar otra',
-    morning: 'Mañana',
-    afternoon: 'Tarde y noche',
+    bookAnother: 'Reservar otro',
     whatsapp: {
-      greeting: '¡Hola Laura! Quiero reservar una cita a través de tu portafolio.',
+      greeting: '¡Hola Laura! Quiero reservar un servicio a través de tu portafolio.',
       service: 'Servicio',
-      when: 'Fecha y hora',
       name: 'Nombre',
       email: 'Correo',
       phone: 'Teléfono',
@@ -277,27 +249,32 @@ export const es: Dictionary = {
     },
     services: [
       {
+        id: 'web-development',
+        title: 'Desarrollo Web (Full Code)',
+        price: '$300',
+        description: 'Sitios web codificados a mano con frameworks modernos — sin constructores de página'
+      },
+      {
         id: 'wordpress-development',
         title: 'Desarrollo WordPress',
-        price: '$240',
+        price: '$200',
         description: 'Sitio WordPress completo, del diseño al lanzamiento'
       },
       {
         id: 'ecommerce-store',
         title: 'Tienda E-commerce',
-        price: '$180',
+        price: '$250',
         description: 'WooCommerce o Shopify, lista para vender'
       },
       {
         id: 'seo-optimization',
         title: 'SEO y Optimización',
-        price: '$120',
+        price: '$100',
         description: 'Mejora el posicionamiento, la velocidad y la estructura'
       }
     ],
     details: {
       service: 'Servicio',
-      dateTime: 'Fecha y hora',
       price: 'Precio',
       fullName: 'Nombre completo *',
       namePlaceholder: 'Tu nombre',
@@ -313,8 +290,8 @@ export const es: Dictionary = {
 
   credentials: {
     eduTitle: 'Ingeniería en Automática',
-    eduInstitution: 'CUJAE · La Habana, Cuba',
-    eduText: 'Mi titulación en Ingeniería en Automática (CUJAE) me aporta un enfoque riguroso y sistémico para resolver problemas — es una parte esencial de cómo planifico, construyo y depuro.',
+    eduInstitution: 'CUJAE · La Habana, Cuba · 2025',
+    eduText: 'Me gradué en 2025 en Ingeniería en Automática en la CUJAE, lo que me aporta un enfoque riguroso y sistémico para resolver problemas — es una parte esencial de cómo planifico, construyo y depuro.',
     thesisTitle: 'Tesis de Ingeniería en Automática',
     thesisDesc: 'Descarga mi tesis de grado sobre automatización y control (PDF).',
     thesisCta: 'Descargar tesis',

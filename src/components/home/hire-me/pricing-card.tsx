@@ -14,6 +14,7 @@ type PricingCardProps = {
 
 const PricingCard = ({ className, locale = 'en' }: PricingCardProps) => {
   const t = useTranslations(locale)
+
   // Pricing is not fixed — the CTA scrolls to the booking form instead of a contact page.
   const contactHref = '#select-service'
 

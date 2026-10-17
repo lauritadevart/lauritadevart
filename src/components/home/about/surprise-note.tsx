@@ -1,5 +1,7 @@
 import { useState } from 'react'
 
+import { SmileIcon } from 'lucide-react'
+
 import { useTranslations, type Locale } from '@/i18n'
 import { cn } from '@/lib/utils'
 
@@ -38,8 +40,9 @@ const SurpriseNote = ({ locale = 'en' }: SurpriseNoteProps) => {
         </p>
       </div>
 
-      <p className='text-card-foreground absolute bottom-0 left-[10%] text-[26px] font-medium sm:text-nowrap md:left-1/2 md:-translate-x-1/2'>
+      <p className='text-card-foreground absolute bottom-0 left-[10%] flex items-center gap-2 text-[26px] font-medium sm:text-nowrap md:left-1/2 md:-translate-x-1/2'>
         {t.about.note.title}
+        <SmileIcon className='text-accent size-6 shrink-0' aria-hidden='true' />
       </p>
     </div>
   )
