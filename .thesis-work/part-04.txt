@@ -1,0 +1,59 @@
+# Chapter 2: Automation proposal
+
+## 2.1 Introduction
+
+In the context of industrial automation systems, the programming of Programmable Logic Controllers (PLC) plays a crucial role in ensuring the efficiency, safety, and reliability of processes. This chapter presents the design and development of a flowchart for the programming of a PLC that controls a rolling line, specifically focused on the operation of the auxiliary elements of the process, since they enable the transport and precise cutting of the material, ensuring a continuous and synchronized flow in the production line.
+
+The proposed flowchart integrates the essential functionalities of start, stop, and alarm management, considering the interactions between the drags and the shears, as well as the operating conditions and the possible critical events that may arise during the process. Key aspects such as the logical operating sequence, fault detection, and the system's response to abnormal situations are also addressed. This approach not only seeks to optimize the performance of the rolling line, but also to ensure operational safety and facilitate preventive maintenance.
+
+Through this chapter, a detailed guide is provided for the implementation of the program in the PLC, backed by a technical analysis that justifies each design decision. The objective is to contribute to the progress of automation in the rolling industry, offering a robust and scalable solution that can adapt to different configurations and production requirements.
+
+## 2.2 PLC selection
+
+To replace the 2 GE Fanuc PLCs, the CPU 1516-3 PN/DP from the SIMATIC S7-1500 line was selected for its characteristics, among which are: internal program memory of 1.5 MB and data memory of 5 MB; PROFINET (PN) and PROFIBUS (DP) communication interfaces; and I/O modules, supporting up to 32 modules. This CPU will be installed in the central machine control room with a remote station to control all the modules that will be used, while in the yellow cabin — where the GE Fanuc CPU is currently located — another remote station will be installed. This will represent a saving in the installation of PROFINET and PROFIBUS cables, since the CPU supports both communications: it will be closer to the drive, with which it will communicate via PROFIBUS, while it will communicate with the remote station via PROFINET.
+
+[Figure 2.1 CPU 1516-3 PN/DP]
+
+Sixteen DI 16x24VDC digital input modules will be used; each includes 16 digital inputs. It requires a voltage of 15–30 VDC to recognize a logic 1 state and 5 VDC for state 0. The typical input current in state 1 is ≤ 2–15 mA (at 24 VDC). For digital outputs, sixteen DQ 16x24VDC/0.5A modules are proposed; each has 16 digital outputs. It delivers 24 VDC (range: 20.4–28.8 VDC) in state 1 and ≤ 2 VDC in state 0, and the maximum current per channel is 0.5 A in the active state.
+
+For the high-speed counting modules, seven TM PosInput 2 digital input modules will be used. Each module has two independent channels; its signal type is compatible with incremental encoders (A, B, R) and NAMUR signals. The maximum frequency is 1 MHz (for TTL/HTL signals), and it features bidirectional counting, interpolation, value comparison, and integrated diagnostics.
+
+In the remote station in the yellow cabin as well as in the one located right below the CPU, an IM 155-6 PN ST communication interface (see Annex 3) with the PROFINET protocol will be used to communicate with the CPU; it is worth noting that it supports up to 32 modules.
+
+For the case of the remote station in the yellow cabin only, a PS 60W 24VDC power supply with 120/230 VAC input and 24 VDC / 2.5 A output will also be needed, suitable for powering 32-channel modules. For the digital input modules, the use of three DI 32x24VDC BA with 32 input channels (24 VDC) and short-circuit and open-wire detection is proposed. For the digital output modules, four DQ 32x24VDC/0.5A BA are required, with 32 output channels (24 VDC, 0.5 A per channel) and short-circuit and overload protection. All modules belong to the ET 200SP line, optimized for distributed systems.
+
+[Table 2.1 Required modules and accessories. (See Spanish version for the full table.)]
+
+## 2.3 Flowcharts
+
+The first flowchart designed represents the logical sequence that the PLC must follow for the start-up of the rolling mill. This sequence is guided by the start signal given by the operator in the yellow cabin, and additionally requires a signal from the furnace indicating that a billet with the appropriate temperature level for rolling will be sent along the roller table. Once these requirements are met, all the stand motors as well as the roller table are initialized, and their direction of rotation is set so that the billet heads to the left (seen from the cabin).
+
+[Figure 2.2 Start-up flowchart.]
+
+The first auxiliary element to be developed is the drag TR2, located just after the repeater that curves the billet. This drag will require the rising edge of the photocell ZT1; a timer previously calculated as a function of the roller table speed is activated and, when it finishes, an output signal is issued that enables the solenoid. This makes the drag rolls close, trapping the billet. Next, another timer is enabled that waits for a time that depends on the speed and has to do with the length between the drag and stand 6, such that it guarantees that the stand has grabbed the billet. At this point the drag opens, fulfilling its function, and waits for the next billet.
+
+[Figure 2.3 Flowchart for the drag TR2.]
+
+The shear CV2 is in charge of cutting the tail and head of the billet, since these zones cool down more rapidly and could damage the equipment if they are not removed. According to the signal of the first photocell, a time is calculated that includes the time the billet takes to travel from the photocell to the shear plus the time corresponding to the length of the head to be cut. Knowing the constant value of the roller table speed, this calculation is very simple in the case that automatic cutting is required. For manual cutting, it will only be necessary to enter the time value considered by the operator. When the time elapses, the shear makes a cut and, using the induction sensor ZTcv2 — which sends a signal upon detecting the shear's cut — the solenoid valve is reset. For the tail cut, both the sensor ZTcv2 and ZT1 must see a falling edge indicating that the end of the billet is approaching. At this point the timer calculation is repeated for the automatic case, while the manual case waits for the operator's command. The shear's cut and the solenoid-valve reset are repeated upon seeing the signal of the sensor ZTcv2, and thus the head-and-tail cutting process ends, leaving CV2 ready for the next billet.
+
+[Figure 2.4 Flowchart for the shear CV2.]
+
+The drag TR3 follows a very similar algorithm to that of TR2, with the difference in the calculation of the times in which it grabs and releases the billet, since — unlike TR2 — this drag has the task of taking the billet to a shear that must make a cut to measure.
+
+[Figure 2.5 Flowchart for the drag TR3.]
+
+The shear CV3 makes a cut to measure on the hot rebar, which allows the profile to fit correctly inside the cooling bed. This algorithm includes a cut counter to keep track of how many rebars have been cut and are in the cooling process. From the rising edge of the second photocell ZT2, a timer is started with the time the billet takes to reach the shear. Then, depending on whether the photocell detects the billet or not, a cut to measure is made based on a time calculation that considers the desired length and the speed of the roller table. Should the photocell stop detecting the billet, it will be calculated whether the remaining profile is longer than the desired length. If it is not, the cut will not be performed and the algorithm will wait again for the positive pulse of the photocell, which indicates the arrival of the next billet. Otherwise, the cut will be carried out, and afterwards the signal of the photocell ZT2 will be waited for in the same way.
+
+[Figure 2.6 Flowchart for the shear CV3.]
+
+The following flowchart describes the stop process corresponding to the subprocesses before and after line 320, the stop conditions being either a confirmation by the operator or an alarm.
+
+[Figure 2.7 Flowchart for the stop of line 320.]
+
+Lastly, the two alarms corresponding to the subprocesses before and after line 320 are described in these diagrams. These are the actuation of a breaker for motor voltage protection, and the signal from the flow switch installed on both drags, which gives a signal once the lubrication flow to them drops below the established standard levels.
+
+[Figure 2.8 Flowchart for the alarms of line 320.]
+
+## 2.4 Partial conclusions
+
+In this chapter, the design and control logic for the rolling and cutting systems has been presented, focusing on the operation of the shears CV2 and CV3 as well as on the synchronization of the drags and the roller table. Through detailed flowcharts and algorithms, a clear and efficient sequence has been established for the start-up, cutting, and handling of the billets, considering key aspects such as transport time, signal detection through photocells, and alarm management. The shear CV2 is responsible for removing the heads and tails of the billets, ensuring that the equipment is not damaged due to the accelerated cooling in these zones. For its part, the shear CV3 makes cut-to-measure operations to adapt the rebars to the dimensions required by the cooling bed. Both processes depend on precise calculations based on the speed of the roller table and on the detection of the billets through sensors, which guarantees synchronized and efficient operation. In addition, the importance of the auxiliary elements — such as photocells and induction sensors — has been highlighted: although they do not perform the main function, they are indispensable for the correct operation of the system. These components enable the automation of the process, reducing manual intervention and minimizing errors.

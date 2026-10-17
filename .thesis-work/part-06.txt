@@ -1,0 +1,154 @@
+# Chapter 4: Technical and economic analysis
+
+## 4.1 Introduction
+
+This chapter addresses the key aspects of the economic analysis of this research, focusing on the costs and impacts of the proposed solutions. A well-structured analysis provides financial tools to estimate the total cost associated with the creation of a project. In addition, it is essential for managing expenses efficiently, avoiding the acquisition of unnecessary materials and aligning with the guidelines of the country's economic policy.
+
+## 4.2 Total cost
+
+The total cost of a project represents the sum of all the economic resources needed to carry it out, including both direct and indirect expenses.
+
+CT = CD + CI (ec. 4.1)
+
+Where:
+- CT: total cost
+- CD: direct costs
+- CI: indirect costs
+
+CD = SB + SC + SS + MD + DP + OG (ec. 4.2)
+
+Where:
+- SB: basic salaries
+- SC: complementary salaries (payment to the vacation fund)
+- SS: social security
+- MD: direct materials
+- DP: per diems and travel expenses.
+- OG: Other Expenses.
+
+### 4.2.1 Calculating SB
+
+The total basic salary (SB) represents the base remuneration assigned to the students for the time invested in the project, excluding additional benefits such as vacations or social security contributions. This value includes the sum of the base salaries of all the people who participate in the preparation of the project proposal.
+
+SB = Σ(i=1..n) Ai · Bi (ec. 4.3)
+
+Where:
+- Ai: days devoted to the research by participants.
+- Bi: daily salary of the participant (monthly salary / 24).
+- N: total number of participants.
+
+Author Laura Díaz Pérez:
+A1 = 56 days
+B1 = 400 CUP / 24 = 16.667 CUP
+
+Supervisor Carmenchu Regueiro Busoch:
+A2 = 56 days
+B2 = 6767.8 CUP / 24 = 281.991 CUP
+
+Supervisor Romar Alexei Borges Rivero:
+A3 = 56 days
+B3 = 4500 CUP / 24 = 187.5 CUP
+
+Supervisor Gonzalo de la Rosa Izquierdo:
+A4 = 56 days
+B4 = 5560 CUP / 24 = 231.667 CUP
+
+Therefore:
+
+SB = (56 days × 16.667 CUP) + (30 days × 281.991 CUP) + (30 days × 187.5 CUP) + (30 days × 231.667 CUP)
+SB = 21968 CUP
+
+### 4.2.2 Calculating SC
+
+The complementary salary (SC) equals 9.09% of the basic salary and is intended to cover vacation pay, according to the standards and regulations established at the national level.
+
+SC = 0.0909 × SB (ec. 4.4)
+SC = 0.0909 × 21968 CUP
+SC = 1996.899 CUP
+
+### 4.2.3 Calculating SS
+
+Social security equals 10% of the basic salary including the complementary salary.
+
+SS = 0.05 × (SB + SC) (ec. 4.5)
+SS = 0.05 × (21968 CUP + 1996.899 CUP)
+SS = 1198.245 CUP
+
+### 4.2.4 Calculating MD
+
+Expenses on direct materials (MD) correspond to the financial resources allocated to the purchase of equipment, components, and technical tools that are used directly in carrying out the project. In this case, it was necessary to replace two GE Fanuc PLCs and their modules with the Siemens equivalents in the S7-1500 line. The purchase of accessories for the correct functioning of the communications was also necessary, and for the client-server architecture proposal the purchase of an HP PC was estimated. Table 4.1 lists these devices, together with their individual prices and the total cost according to the required quantity of each one.
+
+[Table 4.1 Material costs. (See Spanish version for the full table.)]
+
+Therefore:
+
+MD = $24074.19
+
+### 4.2.5 Calculating DP
+
+Per diems and travel (DP) include the expenses related to special per diems and worker transportation. In this project it is not necessary to make investments in this aspect, so no costs associated with per diems and travel are generated.
+
+DP = 0
+
+### 4.2.6 Calculating OG
+
+Other expenses (OG) covers the cost of equipment use, specifically the expense associated with machine time, which has a value of 10.00 CUP for each working hour. However, in this case this type of expense is not incurred, so the amount is zero.
+
+OG = 0
+
+### 4.2.7 Calculating CD
+
+CD = 21968 CUP + 1996.899 CUP + 1198.245 CUP + $24074.19 + 0 + 0
+CD = 25163.144 CUP + $24074.19
+
+### 4.2.8 Calculating CI
+
+This refers to the general expenses indispensable for the execution of the project, but which are not directly linked to a particular activity, such as electricity consumption, supervision costs, or the use of infrastructure. These expenses are calculated by applying a coefficient to the base salary of the research project.
+
+CI = 0.84 × SB (ec. 4.5)
+CI = 0.84 × 21968 CUP
+CI = 18453.12 CUP
+
+### 4.2.9 Calculating CT
+
+CT = 25163.144 CUP + $24074.19 + 18453.12 CUP
+CT = 49237.334 CUP + $24074.19
+
+## 4.3 Project feasibility
+
+### 4.3.1 Economic and financial feasibility
+
+The project, although it implies a considerable cost, is profitable, since the entity has the financial capacity to cover the total investment required.
+
+### 4.3.2 Technical feasibility
+
+The "José Martí" Steel Company, also known as Antillana de Acero, has the technical and human resources necessary to carry out the project effectively.
+
+### 4.3.3 Environmental feasibility
+
+The project is designed to comply with the established regulations and, with adequate execution, poses no risk to the environment.
+
+### 4.3.4 Political feasibility
+
+The project is aligned with the objectives and policies of the organization, without compromising its image or institutional prestige.
+
+### 4.3.5 Legal feasibility
+
+The implementation of the project does not imply changes or adjustments that may affect compliance with the legal regulations in force at the organization.
+
+## 4.4 Project impact
+
+### 4.4.1 Economic impact
+
+The modernization of the rolling mill at the Antillana de Acero Company will have a transcendental economic impact, since it increases the efficiency and productive capacity of the company, reducing operating costs and improving product quality. This enables the company to compete in more demanding markets, increasing its revenue and strengthening its position in the steel industry. In addition, investment in modern technology and equipment generates a positive effect on the supply chain, benefiting suppliers and customers. At the macroeconomic level, the project contributes to the growth of the industrial sector, generating direct and indirect jobs and promoting the economic development of the region. Altogether, this modernization not only boosts the company's profitability, but also strengthens the local and national economy.
+
+### 4.4.2 Social impact
+
+The modernization of the rolling mill at the Antillana de Acero Company will have a significant social impact, since it not only improves the working conditions of the workers, but also promotes training in new technologies. By implementing more efficient and safer processes, a healthier and more productive work environment is promoted, which directly benefits employees and their families. In addition, by strengthening the competitiveness of the company, the economic development of the community is contributed to, creating a multiplier effect in the region. This project reinforces the company's commitment to social well-being and people's progress, consolidating its role as a key actor in local development.
+
+### 4.4.3 Environmental impact
+
+The modernization of the rolling mill at the Antillana de Acero Company will represent an opportunity to reduce the environmental impact of its operations. By incorporating more efficient and sustainable technologies, energy consumption will be decreased, contributing to a cleaner production process. In addition, the project includes compliance with environmental regulations, ensuring that the exploitation of resources is carried out responsibly. With these improvements, the company will not only optimize its production, but will also reinforce its commitment to environmental protection and sustainable development.
+
+## 4.5 Partial conclusions
+
+The economic study carried out in this project demonstrated its viability, concluding that the company will obtain benefits if it decides to implement it, since it will ensure greater stability in the production of steel profiles in the rolling mill. This advancement will not only drive an increase in the company's income, but will also have a positive impact on the country's economy.

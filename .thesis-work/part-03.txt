@@ -1,0 +1,75 @@
+in this field, supplying steel for a wide variety of applications, from the automotive industry to construction.
+
+Cold rolling has not been the only revolutionary innovation in recent years: the dry-film laminator sector is recording notable growth, driven by technological advances in the rolling field and their application in various industries. These machines play a crucial role in sectors such as electronics, automotive, packaging, and healthcare, where they are used to apply protective coatings onto surfaces with high precision and efficiency. Unlike wet rolling methods, dry-film laminators offer benefits such as faster production cycles, less material waste, and more durable end products. Globally, this market is expanding as manufacturers seek economical solutions that improve both the appearance and the performance of their products.
+
+To support the above, leading companies that have adopted this technology can be mentioned. For example, the KETE Group, specialized in the packaging industry, provides laminating machines capable of working with material combinations such as plastic-plastic, paper-plastic, and aluminum-plastic. DirectIndustry, for its part, is a prominent supplier of dry rolling equipment designed for plastic, paper, and aluminum foil applications. Finally, Shanghai Outex stands out for its manufacture of high-quality dry laminating machines adaptable to a wide range of industrial needs.
+
+### 1.2.2 National environment
+
+Since 2019, the company Acinox-Las Tunas has been working on an innovative project that seeks to integrate science and technology to drive development and improve the efficiency of one of Cuba's most important metallurgy plants. This initiative, linked to the National Development Program "Automation, Robotics and Artificial Intelligence", uses Advanced Automation in steel elaboration and refining processes. Thanks to research carried out within master's degree programs, conceptual solutions have been proposed that address various production challenges.
+
+At the Antillana plant, the drive and automation system of line 400 of the 300 rolling mill was modernized, which allowed restoring the production of half-inch steel profiles for both the domestic market and export. For this renewal, ABB DCS800 digital DC converters, a Siemens Simatic S7-300 CPU 315-2 PN/DP programmable controller, and a monitoring system based on WinCC version 7.0 + SP2 software were implemented. In addition, a supervision system was developed for the reheating furnace using Schneider Electric's Citect SCADA. Motivated by these successful results, the company plans to extend this modernization to other areas of its operations.
+
+## 1.3 Previous work
+
+Erik García Vázquez (2011), in his thesis, developed the design of the speed control system for the motors of the finishing line of the rolling train of the 300 rolling mill at Antillana de Acero.
+
+Jeffrey Ugarte Vargas (2019), in his thesis, made a proposal for the modernization of the automation system associated with the subprocesses of line 320 of the 300 rolling mill at Antillana de Acero.
+
+Viana Menezes Demba (2020), her thesis had as its main objective the design of the automation and electrical drive system in the head-and-tail cutting area of line 320 of the 300 rolling mill at Antillana de Acero.
+
+## 1.4 Process description
+
+The steel billet leaves the reheating furnace at a temperature of around 1200 °C and is carried by the roller tables to the roughing stand, through which it passes 6 times with the help of the rocking table — a process needed to stretch it. It then follows the roller table to the bump, where the roller table is rotated in the opposite direction by manual drive. It next meets a diverting switch, like the one used on railway lines; on the return path it passes through the roughing line, where it crosses 4 stands. Stands 2 and 3 are coupled to the same motor, whereas stands 4 and 5 each have an independent motor. To continue the rolling process, the billet must be incorporated into line 320, which is parallel to the path already covered; to achieve this, the billet enters the bending shoe — no more than a curved metal piece that makes the billet create a curvature as it passes through and enter the drag TR2, continuing along the line. At the end of the bending shoe there is a photocell that, upon seeing the tip of the billet, gives a signal to the bending shoe; it then lifts and lets the billet stretch to prevent it from breaking due to excess tension. The roller table of line 320 moves the billet to the aforementioned drag TR2, which brings it into contact with the shear CV2, which cuts the head and tail of the billet. Next there is a tray that, actuated by a solenoid, opens to let the tail and head out and closes once the billet has passed. It then enters stands 6 to 11, with stand 11 being the only vertical stand used in the process. After the last stand there is a photocell and the drag TR3, which serve the cutting cycle performed by the shear CV3, giving the billet the longest possible length for the cooling bed. Once finished, it passes to the ejector, which has its own shaft control that throws the billet according to its thickness onto the cooling bed, which rotates the final product and moves it towards a parallel platform where the cold shear cuts the final product according to customer requirements.
+
+[Figure 1.1 Functional diagram (field view).]
+
+## 1.5 Instrumentation survey
+
+The 6 motors of line 320 (or finishing line) are of the Elektro Maschinenbau brand. They are direct-current, separately excited machines. Their nameplate data are: speed 320 to 960 RPM, excitation current up to 23 A, nominal power 630 kW, nominal current 1825 A, and nominal voltage 600 V (see Annex 1).
+
+[Figure 1.2 Elektro Maschinenbau DC motor.]
+
+ABB DCS800 converters are used for the stand motors.
+
+[Figure 1.3 ABB DCS800]
+
+Four Gefran TPD32-EV converters are used for the drags, the shear CV2, and the ejector (see Annex 2).
+
+[Figure 1.4 Gefran TPD32-EV]
+
+Two ABB ASC800 frequency converters are used to drive the roller table of the cooling bed and the shear CV3.
+
+[Figure 1.5 ABB ACS800]
+
+A Dinamo Tachimetrica tachometer is used as a transmitting sensor, giving a signal of 0.06 V/RPM.
+
+[Figure 1.6 Dinamo Tachimetrica.]
+
+In addition, to display the speeds on the console panel an ELCIS 1/X115T-1000-1230-BZ-C-CL-R encoder is used.
+
+[Figure 1.7 ELCIS 1/X115T-1000-1230-BZ-C-CL-R encoder.]
+
+The speed ratio between one motor and another is controlled by means of BMB 4.082.0 A4 proportional-integral (PI) analog regulators.
+
+It has four ID 2000 series photocells from the Danieli brand, designed to detect the presence of bodies emitting hot infrared radiation.
+
+[Figure 1.8 Danieli photocell.]
+
+Five Siemens 3RG4 013-3JB00 inductive sensors are used on each shear, one pair on the cooling bed, and one on the ejector shaft control, with a 5 mm sensing distance, M18 brass nickel-plated cylinder, 15-34 V DC, 2 wires, 1 N.O. (normally open) contact, 25 mA load current, 400 Hz switching frequency, and a 12 mm plug connector.
+
+[Figure 1.9 Siemens inductive sensor.]
+
+The two aforementioned GE Fanuc 90-30 programmable controllers have a total of 3 high-speed counting modules, 14 digital input modules, 2 analog output modules, and 13 digital output modules.
+
+[Figure 1.10 GE Fanuc 90-30 PLC]
+
+## 1.6 Some standards used
+
+- IEC/TR 62442-3-1: this standard provides a detailed assessment of cybersecurity technologies and tools, offering valuable guidance for manufacturers, suppliers, and security professionals in protecting IACS (industrial automation and control systems) against cyberattacks, with the aim of preserving the integrity of industrial systems and minimizing operational and safety risks.
+- IEC 62381: the annexes of this standard include forms that can be used in test procedures. Purchasers of this standard may reproduce these forms for their own purposes, always in the necessary quantity. The purpose of this standard is to optimize and streamline the negotiation phase and to facilitate a clear and mutual understanding of the scope of the activities corresponding to each party.
+- IEC 62337: this standard seeks to improve and streamline the negotiation phase, fostering a clear and mutual understanding of the scope of the activities and responsibilities of each party involved. In the process industry there is a growing trend to assign the complete construction of plants to contractors under global modalities, such as turnkey or similar. However, experience has shown that both the process industry and the contractor typically face prolonged and costly discussions to define precisely and without ambiguity the tasks corresponding to each one, as well as their responsibilities for ensuring the successful delivery of the plant.
+
+## 1.7 Partial conclusions
+
+This chapter analyzed the technological progress of rolling processes in the global and national contexts, identifying both the achievements reached and the persistent limitations in the development of automated and intelligent systems (SAI). Through a methodological approach, the inherent complexity of the process was addressed by means of a systemic analysis, complemented by the design of a functional diagram that facilitates its structural understanding. Additionally, a diagnostic evaluation of the current state of the instrumentation in the rolling mill was carried out, evidencing technological gaps and optimization opportunities. These results underline the need to integrate innovative solutions in order to overcome operational challenges and consolidate the transition towards more efficient and adaptive systems in the metallurgical industry.

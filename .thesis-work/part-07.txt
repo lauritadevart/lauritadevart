@@ -1,0 +1,42 @@
+# General conclusions
+
+In this work, a study was carried out on the automation and electrical drive systems applied to the process. The knowledge gathered during the research served as the basis for the design of a proposal for an automation and electrical drive system in the subprocesses prior to line 320 of the 300 rolling mill at Antillana de Acero. From this analysis it can be concluded that, once the technical automation means, the control strategy, and the monitoring system have been selected, it is feasible to design an automation and electrical drive system for the auxiliary equipment of line 320 of the 300 rolling mill at Antillana de Acero. The proposed system outperforms the current one, since replacing the existing controllers with a more modern one and implementing more advanced monitoring software solves problems such as frequent failures, lack of spare parts, the limitations of the SNP-X protocol, and the restrictions of the software used to program the PLCs. In addition, the proposal to include a second PC as a server guarantees communication superior to the one existing in the current system, considering that a communication network was also designed to integrate the subprocesses into the monitoring level within the automation pyramid. The proposed system outperforms the current one from the energetic and ecological point of view, optimizing the use of resources and reducing the environmental impact. Finally, the project is economically viable, which reinforces its feasibility of implementation.
+
+# Recommendations
+
+To extend the results obtained through the study carried out and to optimize their use, it is recommended:
+
+- To carry out the corresponding programming of the PLCs to be used, following the line of the flowcharts presented and implementing the algorithms of those equipments not covered in this work.
+- To implement, either in the existing monitoring software or in a completely new one, a fault detection system and even a self-regulating system, which would mean a great technological advancement for the rolling mill and the company in general.
+
+# Bibliography
+
+1. Belmonte LP. Programación de controladores avanzados SIMATIC S7 1500 con TIA Portal, AWL/KOP y SCL. Marcombo; 2020.
+2. Diez Aznar JM, Martínez Torres J. Aprenda WinCC. Colección Académica Editorial UPV. 2011.
+3. Enríquez J, Trems E, De Elío S, Fernández D. Laminación. Monografía (Manual). Madrid: Universidad Politécnica de Madrid. 2010.
+4. Francisco Javier TF. Grandes deformaciones plásticas en frío de los policristales. Subestructura y endurecimiento por deformación en la laminación en frío del cobre. Universidad de Navarra; 1981.
+5. González A, Moreno V. Introducción a la automatización de los sistemas productivos. Editorial Félix Varela. 2009.
+6. HP DCT. Product Sheet HP EliteDesk 800 G6 Tower PC. 2025.
+7. Pérez Cruz J. Acinox-Las Tunas: donde la ciencia multiplica resultados. 2022.
+8. Ramírez Cadena MdJ, Macías Hidalgo I, Ibáñez Viruega KI. La pirámide de la automatización. 2019.
+9. Sánchez DJ, Ruiz JA. Generación de opciones de destino para semiproductos del acero en las empresas siderúrgicas. Revista Investigación & Desarrollo. 2021;21(1).
+10. Siemens. Data sheet S7-1500, CPU 1516-3 PN/DP. 2025.
+11. Siemens. Data sheet SIMATIC S7-1500, digital input module DI 32x24 V DC HF. 2025.
+12. Siemens. Data sheet SIMATIC S7-1500, TM count 2x24 V counter module. 2025.
+13. Siemens. Data sheet SIMATIC S7-1500, DQ 16x24VDC/0.5A ST Digital Output Module. 2025.
+14. Siemens. Data sheet SIMATIC ET 200SP, PROFINET interface module IM 155-6PN. 2025.
+15. Siemens. Data sheet SIMATIC S7-1500, System power supply PS 60W 24/48/60 V DC. 2025.
+16. Siemens. Data sheet SIMATIC S7-1500, Digital input module, DI 32x24 V DC BA. 2025.
+17. Siemens. Data sheet SIMATIC S7-1500, Digital output module DQ 32x24VDC/0.5A BA. 2025.
+
+# Annexes
+
+Annex 1: Nameplate data of the Elektromaschinenbau motors.
+
+Annex 2: Table with the power rating of the Gefran converters.
+
+Annex 3: PROFINET interface module IM 155-6PN, SIMATIC ET 200SP.
+
+Annex 4: HP EliteDesk 800 G6 Tower PC product sheet.
+
+[The annexes contain tables, photographs, and diagrams that are not reproduced in this unofficial translation; please refer to the original Spanish version.]

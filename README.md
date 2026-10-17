@@ -47,14 +47,14 @@ Senior Web Developer with **5+ years of experience** designing, building, and op
 <br>
 <img src="https://skillicons.dev/icons?i=c,cpp,git,github,linux,photoshop" alt="C, C++, Git, GitHub, Linux, Photoshop" />
 
-| Category | Skills |
-|:---|:---|
-| 🌐 **Web Development** | HTML5, CSS3, JavaScript (ES6+), PHP, responsive & cross-browser development |
-| 📝 **WordPress** | WordPress, Elementor, theme & plugin customization, site maintenance, performance tuning |
-| 🛒 **E-commerce** | WooCommerce, Shopify, store setup, product catalogs, payment & checkout optimization |
-| 🔍 **SEO** | On-page SEO, technical SEO, site structure, Core Web Vitals, content optimization |
-| ⚛️ **Modern Frameworks** | Astro, React, Next.js, Tailwind CSS, TypeScript, Vite |
-| 💻 **Programming** | C, C++, C#, automation & technical problem-solving |
+| Category                 | Skills                                                                                   |
+| :----------------------- | :--------------------------------------------------------------------------------------- |
+| 🌐 **Web Development**   | HTML5, CSS3, JavaScript (ES6+), PHP, responsive & cross-browser development              |
+| 📝 **WordPress**         | WordPress, Elementor, theme & plugin customization, site maintenance, performance tuning |
+| 🛒 **E-commerce**        | WooCommerce, Shopify, store setup, product catalogs, payment & checkout optimization     |
+| 🔍 **SEO**               | On-page SEO, technical SEO, site structure, Core Web Vitals, content optimization        |
+| ⚛️ **Modern Frameworks** | Astro, React, Next.js, Tailwind CSS, TypeScript, Vite                                    |
+| 💻 **Programming**       | C, C++, C#, automation & technical problem-solving                                       |
 
 ---
 
@@ -87,19 +87,10 @@ My final degree thesis is available for download on [my portfolio](https://lauri
 
 ## 🌐 Languages
 
-| Language | Level |
-|:---|:---|
-| 🇪🇸 Spanish | Native |
+| Language   | Level          |
+| :--------- | :------------- |
+| 🇪🇸 Spanish | Native         |
 | 🇬🇧 English | B1 — Certified |
-
----
-
-## 📊 GitHub Stats
-
-<div align="center">
-  <img height="180em" src="https://github-readme-stats.vercel.app/api?username=lauritadevart&show_icons=true&hide_border=true&bg_color=0d1117&title_color=E0479B&icon_color=FF7BC5&text_color=c9d1d9&rank_icon=github" alt="GitHub stats" />
-  <img height="180em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=lauritadevart&layout=compact&hide_border=true&bg_color=0d1117&title_color=E0479B&text_color=c9d1d9" alt="Top languages" />
-</div>
 
 ---
 
@@ -133,6 +124,6 @@ My final degree thesis is available for download on [my portfolio](https://lauri
 
 ![Profile Views](https://komarev.com/ghpvc/?username=lauritadevart&color=E0479B&style=for-the-badge)
 
-*Last updated: October 2026*
+_Last updated: October 2026_
 
 </div>

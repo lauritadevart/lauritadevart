@@ -47,14 +47,14 @@ Desarrolladora Web Senior con **más de 5 años de experiencia** diseñando, con
 <br>
 <img src="https://skillicons.dev/icons?i=c,cpp,git,github,linux,photoshop" alt="C, C++, Git, GitHub, Linux, Photoshop" />
 
-| Categoría | Habilidades |
-|:---|:---|
-| 🌐 **Desarrollo Web** | HTML5, CSS3, JavaScript (ES6+), PHP, desarrollo responsive y multi-navegador |
-| 📝 **WordPress** | WordPress, Elementor, personalización de themes y plugins, mantenimiento, optimización de rendimiento |
-| 🛒 **E-commerce** | WooCommerce, Shopify, creación de tiendas, catálogos de productos, optimización de pagos y checkout |
-| 🔍 **SEO** | SEO on-page, SEO técnico, estructura del sitio, Core Web Vitals, optimización de contenido |
-| ⚛️ **Frameworks Modernos** | Astro, React, Next.js, Tailwind CSS, TypeScript, Vite |
-| 💻 **Programación** | C, C++, C#, automatización y resolución de problemas técnicos |
+| Categoría                  | Habilidades                                                                                           |
+| :------------------------- | :---------------------------------------------------------------------------------------------------- |
+| 🌐 **Desarrollo Web**      | HTML5, CSS3, JavaScript (ES6+), PHP, desarrollo responsive y multi-navegador                          |
+| 📝 **WordPress**           | WordPress, Elementor, personalización de themes y plugins, mantenimiento, optimización de rendimiento |
+| 🛒 **E-commerce**          | WooCommerce, Shopify, creación de tiendas, catálogos de productos, optimización de pagos y checkout   |
+| 🔍 **SEO**                 | SEO on-page, SEO técnico, estructura del sitio, Core Web Vitals, optimización de contenido            |
+| ⚛️ **Frameworks Modernos** | Astro, React, Next.js, Tailwind CSS, TypeScript, Vite                                                 |
+| 💻 **Programación**        | C, C++, C#, automatización y resolución de problemas técnicos                                         |
 
 ---
 
@@ -87,19 +87,10 @@ Mi tesis de grado está disponible para descarga en [mi portafolio](https://laur
 
 ## 🌐 Idiomas
 
-| Idioma | Nivel |
-|:---|:---|
-| 🇪🇸 Español | Nativo |
-| 🇬🇧 Inglés | B1 — Certificado |
-
----
-
-## 📊 Estadísticas de GitHub
-
-<div align="center">
-  <img height="180em" src="https://github-readme-stats.vercel.app/api?username=lauritadevart&show_icons=true&hide_border=true&bg_color=0d1117&title_color=E0479B&icon_color=FF7BC5&text_color=c9d1d9&rank_icon=github" alt="Estadísticas de GitHub" />
-  <img height="180em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=lauritadevart&layout=compact&hide_border=true&bg_color=0d1117&title_color=E0479B&text_color=c9d1d9" alt="Lenguajes principales" />
-</div>
+| Idioma     | Nivel            |
+| :--------- | :--------------- |
+| 🇪🇸 Español | Nativo           |
+| 🇬🇧 Inglés  | B1 — Certificado |
 
 ---
 
@@ -133,6 +124,6 @@ Mi tesis de grado está disponible para descarga en [mi portafolio](https://laur
 
 ![Contador de Visitas](https://komarev.com/ghpvc/?username=lauritadevart&color=E0479B&style=for-the-badge)
 
-*Última actualización: octubre de 2026*
+_Última actualización: octubre de 2026_
 
 </div>

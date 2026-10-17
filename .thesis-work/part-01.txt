@@ -1,0 +1,84 @@
+# Declaration of Authorship
+
+I hereby declare that I am the sole author of this thesis and I authorize the Universidad Tecnológica de La Habana "José Antonio Echeverría" to make use of it as it deems appropriate, once it has been discussed and approved by the corresponding committee.
+
+# Dedication
+
+To my mother, for her endless love and for always believing in me.
+
+To my father, for being present in the most difficult moments and backing every decision I made.
+
+To my grandmother, for her affection and her unconditional support.
+
+To all my family and loved ones.
+
+# Acknowledgements
+
+To my mother, for giving me life and for accompanying me along this long path of my education, and for giving me the opportunity to become an engineer.
+
+To my father, who despite the distance was always present and motivated me to surpass myself every day.
+
+To my boyfriend, Ernesto Leyva Garcia, for being my greatest support during these years.
+
+To Thalía Gonzales Vicet, for helping me throughout my studies and for being by my side at every stage of my life, and for being the best friend I could have asked for.
+
+To the friends I made during these years of university, especially Andrea Gomez Osoria, for being with me through good times and bad.
+
+To all my professors, thank you — and especially to my supervisors, MsC. Romar Alexei Borges Rivero and MsC. Carmenchu Regueiro Busoch, for clearing up every one of my doubts.
+
+To the workers of Antillana de Acero, and especially to the technician Yosbel, for teaching me everything about the rolling mill.
+
+To all of them, thank you very much!
+
+# Abstract
+
+This diploma thesis proposes the automation of subprocesses associated with line 320 of the 300 rolling mill at Antillana de Acero, using the Siemens S7-1500 series. The main objective is to modernize the currently obsolete automatic control system to improve efficiency and reduce production downtime. Line 320 operates with two GE Fanuc series 90-30 PLCs, which are outdated and face communication issues, making maintenance and operation difficult. The proposal includes migrating to Siemens S7-1500 PLCs and implementing two screens in a SCADA system to monitor and control the rolling process.
+
+The thesis is structured into four chapters. In Chapter 1, the state of the art in rolling technology is described, both internationally and nationally, highlighting advancements in the steel industry, such as cold rolling and the integration of Industry 4.0 technologies. The rolling process at Antillana de Acero is also detailed, including the main components and instruments used. In Chapter 2, the automation proposal is presented, with the selection of the Siemens S7-1500 PLC and the design of flowcharts to control subprocesses in line 320, such as drags and shears. Chapter 3 addresses the monitoring interface and communication network, using Siemens WinCC V7.5 software for real-time supervision. Finally, in Chapter 4, a technical-economic analysis is conducted, evaluating the project's feasibility and its impact on production, the environment, and the company's economy.
+
+The project concludes that modernizing the automatic control system will significantly improve the efficiency of the 300 rolling mill, reducing downtime and increasing product quality. Additionally, it highlights that the implementation will resolve current communication and maintenance issues, enabling Antillana de Acero to compete in more demanding markets.
+
+Keywords: automation, rolling mill, PLC, Siemens S7-1500, SCADA, Antillana de Acero.
+
+# Contents
+
+Introduction
+
+Chapter 1: Automation system of line 320 of the 300 rolling mill
+1.1 Introduction
+1.2 State of the art
+1.2.1 International panorama
+1.2.2 National environment
+1.3 Previous work
+1.4 Process description
+1.5 Instrumentation survey
+1.6 Some standards used
+1.7 Partial conclusions
+
+Chapter 2: Automation proposal
+2.1 Introduction
+2.2 PLC selection
+2.3 Flowcharts
+2.4 Partial conclusions
+
+Chapter 3: Monitoring interface and communication network
+3.1 Introduction
+3.2 Software features
+3.3 Screen description
+3.4 Communication network
+3.5 Partial conclusions
+
+Chapter 4: Technical and economic analysis
+4.1 Introduction
+4.2 Total cost
+4.3 Project feasibility
+4.4 Project impact
+4.5 Partial conclusions
+
+General conclusions
+
+Recommendations
+
+Bibliography
+
+Annexes

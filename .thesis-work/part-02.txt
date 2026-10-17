@@ -1,0 +1,89 @@
+# Introduction
+
+Rolling is an essential technique in the metallurgical industry, used to transform metallic materials into sheets or profiles with specific properties. This method, which dates back centuries, has evolved significantly with technological progress, enabling the production of materials with high precision and quality.
+
+The "José Martí" Steel Company, known as Antillana de Acero, belongs to the GESIME Business Group under the Ministry of the Steel Industry (MINDUS). Its corporate purpose is the production of carbon steel billets, corrugated bars, and hot-rolled profiles to meet the demand of the national economy and for export.
+
+It is located at Calle 20 #10522, Cotorro Municipality, Havana Province, and was founded on May 4, 1959, the year in which it made its first steel cast, opening a new era for steelmaking in Cuba. This backs more than fifty years of production experience and an active participation in both the domestic and foreign markets, mainly in the Caribbean, Central America, Europe, and Asia. Today the company is immersed in a modernization project and is the largest steel producer in the country. It produces and wholesales corrugated bars, plain bars, rolled profiles, and wire rod for the domestic market, and exports carbon steel billets through the Acinox Comercial company.
+
+## Mission of the organization
+
+With more than 40 years of experience in the sector, the "José Martí" Steel Company (Antillana de Acero) produces carbon steel billets and hot-rolled profiles to satisfy the needs of our domestic and foreign customers and the country's commitments.
+
+## Vision of the organization
+
+Antillana de Acero guarantees production levels of carbon steel billets of various grades and hot-rolled products, which enables it to achieve leadership in the Caribbean market with an important share of the Central American market. Its productions are backed by ISO 9001-2008, economic efficiency, reliability, high ethics in honoring our commitments, and competitive prices. Our workers, with a strong sense of belonging, are committed to our company's objectives and are a key factor in its competitiveness and productivity.
+
+## Problem situation
+
+The finishing line L320 of the 300 rolling mill has two obsolete, discontinued GE Fanuc series 90-30 PLCs whose manufacturer no longer exists. These are modular PLCs using the SNP-X communication protocol, with which communication problems exist. Replacing and repairing the modules of the existing PLCs is difficult because they are obsolete. Technology that is too simple is used for a process that should have more redundancy and sophistication. The control is unsatisfactory and does not serve the process efficiently, causing stoppages, delays in fault repair, and an increase in the frequency of faults.
+
+## Problem to be solved
+
+A migration to Siemens S7-1500 PLCs must be carried out as a modernization of the existing PLCs in the finishing and roughing lines of the 300 rolling mill. The implementation of a SCADA system is also considered in order to properly attend to the process.
+
+## General objective
+
+To propose a modernization of the automatic control system for the subprocesses associated with line 320 of the 300 rolling mill at Antillana de Acero.
+
+## Specific objectives
+
+- To research the state of the art.
+- To describe the rolling process in detail, naming each component.
+- To carry out the instrumentation survey as well as the modernization proposals.
+- To propose the PLC programming through the flowchart of the algorithm.
+- To develop the addition of two screens to a SCADA system.
+- To carry out the technical and economic analysis.
+
+## Subject
+
+Hot rolling process of steel bars for reinforcing bar (rebar).
+
+## Scope
+
+The automation system of the subprocesses associated with line 320 of the 300 rolling mill at Antillana de Acero.
+
+## Hypothesis
+
+Replacing the existing automation system with a more modern one in the subprocesses associated with line 320 of the 300 rolling mill at Antillana de Acero will improve the mill's production, thanks to a more robust and efficient system.
+
+## Methods used
+
+Theoretical methods:
+
+- Analysis and synthesis: the topic is broken down into parts and the information is integrated to present a complete view of the state of the art.
+- Hypothetic-deductive: hypotheses are posed about the benefits of technological modernization and conclusions are deduced from success cases and technological advances.
+
+Empirical methods:
+
+- Expert criterion: the information is supported by references to the company's specialists who are present in and interact with the process.
+- Simulation: simulation in WinCC V7.5 will be used for the programming and design of the SCADA.
+
+## Thesis structure
+
+- Chapter 1: the state of the art, the description of the process, and its instrumentation survey will be presented.
+- Chapter 2: the modernization proposal and the algorithm to be followed by the PLC, expressed in a flowchart.
+- Chapter 3: the SCADA supervision system, its programming and screens, and the proposed communication system.
+- Chapter 4: the economic analysis covering the cost of the modernization.
+
+# Chapter 1: Automation system of line 320 of the 300 rolling mill
+
+## 1.1 Introduction
+
+In the field of the metallurgical industry and materials processing, rolling mills play a fundamental role in the production of sheets, plates, and metal profiles. They are machines that shape steel through a plastic deformation process, obtaining products with specific dimensions and properties. The rolling process requires automatic control. Automation not only ensures greater precision and repeatability in the process, but also optimizes resource use, reduces production times, and minimizes human errors. In an increasingly competitive industrial environment, automatic control has become an indispensable tool for maintaining high standards of quality and productivity that are essential to the economy and national development.
+
+In this chapter, an analysis of the state of the art of rolling mills will be carried out, exploring the most recent technological advances and trends in the design and operation of this equipment. In addition, the rolling process will be explored in depth, breaking down each stage. The instruments and control systems used will be detailed, and a proposal integrating advanced technological solutions for the modernization of the plant will be presented. Through this analysis, we seek to identify improvement opportunities that allow its operation to be optimized in an ever more demanding industrial context.
+
+## 1.2 State of the art
+
+### 1.2.1 International panorama
+
+Rolling is a key process in steel transformation and the manufacture of metallic products. It is based on the deformation of the metal by the compressive force exerted by two rollers rotating in opposite directions which, through friction, change the dimensions of the steel being processed. Historically, and generally, this process has been carried out exclusively hot, since the material being transformed requires great flexibility and low residual stress. However, innovation has recently appeared in cold rolling.
+
+The cold rolling sector has established itself as a fundamental pillar within the global steel industry, enabling the creation of steel products of excellent quality that are indispensable in multiple sectors. From the automotive industry to construction and electronics, this process guarantees precision, durability, and impeccable finishes, making it a key element of contemporary manufacturing.
+
+During cold rolling, steel is subjected to the action of rollers at temperatures below its recrystallization point. This method not only strengthens the metal, increasing its tensile strength, but also improves its granular structure. As a result, a material with a superior surface finish and more precise dimensional tolerances is obtained compared with hot-rolled steel. Among its advantages are a more uniform surface and constant thickness, which are essential in industries where aesthetics and accuracy are priorities. Likewise, this type of steel offers greater strength and longevity, making it ideal for applications that must withstand extreme stresses and wear conditions. In addition, the process allows thinner and lighter sheets to be manufactured, which are in high demand in sectors such as vehicle body manufacturing and lightweight structures.
+
+The adoption of Industry 4.0 technologies, such as the Internet of Things (IoT), artificial intelligence, and big data analytics, is revolutionizing this market. These tools enable greater automation, more precise process control, and better-founded decisions. For example, IoT sensors can monitor critical variables in real time, such as temperature, pressure, and roller alignment, generating data that allow rolling to be optimized. For their part, artificial intelligence and machine-learning algorithms analyze this information to anticipate equipment failures, improve maintenance plans, and increase operational efficiency.
+
+Numerous companies worldwide have already adopted these innovations to expand their market presence and offer cutting-edge solutions. A notable example is ArcelorMittal, one of the world's leading steel producers, which uses cold rolling to manufacture high-end materials. Another reference is Nippon Steel Corporation, based in Japan, recognized as a leader in cold-rolled steel production. Similarly, Tata Steel, based in India, stands out for its technology
