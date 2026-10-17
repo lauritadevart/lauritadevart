@@ -1,0 +1,43 @@
+---
+import Layout from '@/layouts/Layout.astro'
+import ContactHero from '@/components/contact/contact-hero/contact-hero'
+import FeaturedWorks from '@/components/shared/featured-works/featured-works.astro'
+import Services from '@/components/shared/services/services'
+import Testimonials from '@/components/shared/testimonials/testimonials'
+
+import { getCaseStudies } from '@/lib/case-studies'
+import { useTranslations } from '@/i18n'
+
+const locale = 'es' as const
+const t = useTranslations(locale)
+
+const caseStudies = await getCaseStudies(2, locale)
+
+const pageTitle = t.nav.contact
+const pageDescription = t.contact.title
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'ContactPage',
+      name: pageTitle,
+      description: pageDescription,
+      inLanguage: 'es'
+    }
+  ]
+}
+---
+
+<Layout title={pageTitle} description={pageDescription} schema={schema} locale={locale}>
+  <ContactHero client:load locale={locale} />
+  <FeaturedWorks
+    caseStudies={caseStudies}
+    layout='vertical'
+    eyebrow={t.work.otherEyebrow}
+    title={t.contact.workTitle}
+    locale={locale}
+  />
+  <Services client:visible locale={locale} />
+  <Testimonials client:visible showBorder={false} locale={locale} />
+</Layout>

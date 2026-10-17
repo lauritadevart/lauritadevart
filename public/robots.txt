@@ -1,0 +1,33 @@
+# robots.txt — Laura Díaz Pérez portfolio
+# Allows all major search engines full access.
+
+User-agent: *
+Allow: /
+
+# Private/admin areas
+Disallow: /admin/
+Disallow: /private/
+Disallow: /_astro/
+
+# Sitemap location (absolute)
+Sitemap: https://laura-diaz-portfolio.vercel.app/sitemap-index.xml
+
+# Crawler-specific
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+# Block aggressive scrapers
+User-agent: AhrefsBot
+Crawl-delay: 10
+
+User-agent: SemrushBot
+Crawl-delay: 10
+
+User-agent: DotBot
+Crawl-delay: 10
+
+User-agent: MJ12bot
+Disallow: /

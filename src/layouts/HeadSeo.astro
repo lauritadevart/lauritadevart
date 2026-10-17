@@ -1,0 +1,184 @@
+---
+import { SITE_METADATA, PERSON_INFO } from '@/consts'
+import { SITE_METADATA as SITE_METADATA_ES } from '@/i18n/seo-es'
+import { LOCALES, localizePath, type Locale } from '@/i18n'
+
+interface Props {
+  title?: string
+  description?: string
+  image?: string
+  type?: 'website' | 'article'
+  keywords?: string
+  author?: string
+  publishedTime?: string
+  modifiedTime?: string
+  noindex?: boolean
+  nofollow?: boolean
+  schema?: Record<string, any>
+  locale?: Locale
+}
+
+const {
+  title,
+  description,
+  image,
+  type = 'website',
+  keywords,
+  author,
+  publishedTime,
+  modifiedTime,
+  noindex = false,
+  nofollow = false,
+  schema,
+  locale = 'en'
+} = Astro.props
+
+// Current pathname (Astro.url.pathname) — used for canonical + hreflang alternates.
+const pathname = Astro.url.pathname
+
+// Absolute canonical URL for the current page/locale.
+const canonicalURL = new URL(pathname, Astro.site)
+
+// Locale-aware metadata defaults.
+const metaForLocale = locale === 'es' ? SITE_METADATA_ES : SITE_METADATA
+
+const finalTitle = title ? `${title} — ${metaForLocale.title.default}` : metaForLocale.title.default
+const finalDescription = description || metaForLocale.description
+const finalKeywords = keywords || metaForLocale.keywords.join(', ')
+const finalImage = image || metaForLocale.openGraph.images[0].url
+const imageURL = new URL(finalImage, Astro.site)
+const finalAuthor = author || metaForLocale.authors[0].name
+const ogLocale = metaForLocale.locale
+const siteName = metaForLocale.openGraph.siteName
+
+// Robots meta tag
+const robotsContent = `${noindex || !SITE_METADATA.robots.index ? 'noindex' : 'index'}, ${nofollow || !SITE_METADATA.robots.follow ? 'nofollow' : 'follow'}, max-image-preview:large, max-snippet:-1, max-video-preview:-1`
+
+// hreflang alternates for every locale of the current path.
+const alternateLinks = LOCALES.map(l => ({
+  lang: l === 'es' ? 'es-ES' : 'en-US',
+  href: new URL(localizePath(pathname, l), Astro.site).toString()
+}))
+const hreflangDefault = alternateLinks.find(link => link.lang.startsWith('en'))?.href ?? canonicalURL.toString()
+
+// Default schema.org structured data — Person (SEO-first for a personal portfolio).
+const defaultSchema = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'Person',
+      name: PERSON_INFO.name,
+      jobTitle: PERSON_INFO.jobTitle,
+      url: PERSON_INFO.url,
+      email: PERSON_INFO.email,
+      sameAs: PERSON_INFO.sameAs,
+      address: {
+        '@type': 'PostalAddress',
+        addressCountry: PERSON_INFO.address.addressCountry
+      }
+    },
+    {
+      '@type': 'WebSite',
+      name: siteName,
+      url: Astro.site?.toString(),
+      description: finalDescription,
+      inLanguage: ogLocale,
+      publisher: { '@type': 'Person', name: PERSON_INFO.name }
+    }
+  ]
+}
+
+const schemaData = schema || defaultSchema
+---
+
+<!-- Essential Meta Tags -->
+<meta charset='utf-8' />
+<meta name='viewport' content='width=device-width, initial-scale=1, viewport-fit=cover' />
+<meta name='generator' content={Astro.generator} />
+
+<!-- Primary Meta Tags -->
+<title>{finalTitle}</title>
+<meta name='title' content={finalTitle} />
+<meta name='description' content={finalDescription} />
+<meta name='keywords' content={finalKeywords} />
+<meta name='author' content={finalAuthor} />
+<meta name='creator' content={metaForLocale.creator} />
+<meta name='publisher' content={metaForLocale.publisher} />
+
+<!-- Canonical URL -->
+<link rel='canonical' href={canonicalURL} />
+
+<!-- Hreflang alternates (EN + ES) + x-default -->
+{alternateLinks.map(link => <link rel='alternate' hreflang={link.lang} href={link.href} />)}
+<link rel='alternate' hreflang='x-default' href={hreflangDefault} />
+
+<!-- Robots Meta Tags -->
+<meta name='robots' content={robotsContent} />
+<meta name='googlebot' content={robotsContent} />
+<meta name='bingbot' content={robotsContent} />
+
+<!-- Sitemap -->
+<link rel='sitemap' href='/sitemap-index.xml' />
+
+<!-- Verification (if provided) -->
+{
+  metaForLocale.verification.google && (
+    <meta name='google-site-verification' content={metaForLocale.verification.google} />
+  )
+}
+{metaForLocale.verification.bing && <meta name='msvalidate.01' content={metaForLocale.verification.bing} />}
+{metaForLocale.verification.yandex && <meta name='yandex-verification' content={metaForLocale.verification.yandex} />}
+
+<!-- Language and Locale -->
+<meta property='og:locale' content={ogLocale} />
+{LOCALES.filter(l => l !== locale).map(l => (
+  <meta property='og:locale:alternate' content={l === 'es' ? 'es_ES' : 'en_US'} />
+))}
+<meta http-equiv='content-language' content={locale} />
+
+<!-- Favicon and Icons -->
+{metaForLocale.icons.icon.map(icon => <link rel='icon' type={icon.type} sizes={icon.sizes} href={icon.url} />)}
+{metaForLocale.icons.apple.map(icon => <link rel='apple-touch-icon' sizes={icon.sizes} href={icon.url} />)}
+{metaForLocale.icons.shortcut.map(icon => <link rel='shortcut icon' href={icon.url} />)}
+<link rel='manifest' href='/site.webmanifest' />
+
+<!-- Open Graph / Facebook -->
+<meta property='og:type' content={type} />
+<meta property='og:url' content={canonicalURL} />
+<meta property='og:site_name' content={siteName} />
+<meta property='og:title' content={title || metaForLocale.openGraph.title} />
+<meta property='og:description' content={finalDescription} />
+<meta property='og:image' content={imageURL} />
+<meta property='og:image:url' content={imageURL} />
+<meta property='og:image:secure_url' content={imageURL} />
+<meta property='og:image:width' content={metaForLocale.openGraph.images[0].width.toString()} />
+<meta property='og:image:height' content={metaForLocale.openGraph.images[0].height.toString()} />
+<meta property='og:image:alt' content={title || metaForLocale.openGraph.images[0].alt} />
+<meta property='og:image:type' content={metaForLocale.openGraph.images[0].type} />
+{publishedTime && <meta property='article:published_time' content={publishedTime} />}
+{modifiedTime && <meta property='article:modified_time' content={modifiedTime} />}
+{author && <meta property='article:author' content={author} />}
+{type === 'article' && keywords && keywords.split(',').map(tag => <meta property='article:tag' content={tag.trim()} />)}
+
+<!-- Twitter -->
+<meta name='twitter:card' content={metaForLocale.twitter.card} />
+<meta name='twitter:site' content={metaForLocale.twitter.site} />
+<meta name='twitter:creator' content={metaForLocale.twitter.creator} />
+<meta name='twitter:title' content={title || metaForLocale.twitter.title} />
+<meta name='twitter:description' content={finalDescription} />
+<meta name='twitter:image' content={imageURL} />
+<meta name='twitter:image:alt' content={title || metaForLocale.openGraph.images[0].alt} />
+<meta property='twitter:url' content={canonicalURL} />
+
+<!-- Performance and Resource Hints (self-hosted fonts; no Google Fonts render-block) -->
+<link rel='preload' as='font' type='font/woff2' href='/fonts/satoshi/satoshi-400.woff2' crossorigin />
+<link rel='preload' as='font' type='font/woff2' href='/fonts/satoshi/satoshi-500.woff2' crossorigin />
+<link rel='preload' as='font' type='font/woff2' href='/fonts/satoshi/satoshi-700.woff2' crossorigin />
+
+<!-- Theme Color -->
+<meta name='theme-color' content='#ffffff' media='(prefers-color-scheme: light)' />
+<meta name='theme-color' content='#0a0a0a' media='(prefers-color-scheme: dark)' />
+
+<!-- Structured Data (JSON-LD) -->
+{/* eslint-disable-next-line astro/no-set-html-directive */}
+<script is:inline type='application/ld+json' set:html={JSON.stringify(schemaData)} />

@@ -1,0 +1,65 @@
+---
+import Layout from '@/layouts/Layout.astro'
+import Hero from '@/components/home/hero/hero.astro'
+import About from '@/components/home/about/about.astro'
+import Skills from '@/components/home/skills/skills.astro'
+import FeaturedWorks from '@/components/shared/featured-works/featured-works.astro'
+import Experience from '@/components/home/experience/experience.astro'
+import Services from '@/components/shared/services/services'
+import Testimonials from '@/components/shared/testimonials/testimonials'
+import HireMe from '@/components/home/hire-me/hire-me.astro'
+import SelectService from '@/components/home/select-service/select-service.astro'
+
+import { getCaseStudies } from '@/lib/case-studies'
+import { useTranslations } from '@/i18n'
+import { PERSON_INFO } from '@/consts'
+
+const locale = 'en' as const
+const t = useTranslations(locale)
+
+const caseStudies = await getCaseStudies(undefined, locale)
+
+const pageTitle = undefined // Use default site title from metadata
+const pageDescription = t.meta.siteDescription
+const pageKeywords = t.meta.keywords.join(', ')
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'Person',
+      name: PERSON_INFO.name,
+      jobTitle: PERSON_INFO.jobTitle,
+      url: PERSON_INFO.url,
+      email: PERSON_INFO.email,
+      sameAs: PERSON_INFO.sameAs,
+      address: { '@type': 'PostalAddress', addressCountry: 'CU' }
+    },
+    {
+      '@type': 'WebSite',
+      name: PERSON_INFO.name,
+      description: pageDescription,
+      inLanguage: 'en',
+      url: PERSON_INFO.url
+    }
+  ]
+}
+---
+
+<Layout
+  title={pageTitle}
+  description={pageDescription}
+  keywords={pageKeywords}
+  schema={schema}
+  locale={locale}
+>
+  <Hero locale={locale} />
+  <About locale={locale} />
+  <Skills locale={locale} />
+  <FeaturedWorks caseStudies={caseStudies} locale={locale} />
+  <Experience locale={locale} />
+  <Services client:visible locale={locale} />
+  <Testimonials client:visible locale={locale} />
+  <HireMe locale={locale} />
+  <SelectService locale={locale} />
+</Layout>

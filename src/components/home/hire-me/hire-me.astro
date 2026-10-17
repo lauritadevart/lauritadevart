@@ -1,0 +1,27 @@
+---
+import Eyebrow from '@/components/shared/eyebrow/eyebrow.astro'
+import ProfileCard from '@/components/home/hire-me/profile-card'
+import PricingCard from '@/components/home/hire-me/pricing-card'
+import { useTranslations, type Locale } from '@/i18n'
+
+interface Props {
+  locale?: Locale
+}
+
+const { locale = 'en' } = Astro.props
+const t = useTranslations(locale)
+---
+
+<section id='pricing' class='border-b py-8 sm:py-16 lg:py-24'>
+  <div class='mx-auto max-w-245 space-y-8 px-4 sm:px-6 lg:space-y-16 lg:px-10.5'>
+    <div class='space-y-4'>
+      <Eyebrow text={t.pricing.eyebrow} />
+      <h2 class='text-2xl font-semibold md:text-3xl lg:text-4xl'>{t.pricing.title}</h2>
+    </div>
+
+    <div class='grid grid-cols-1 gap-6 md:grid-cols-[240px_1fr] lg:grid-cols-[334px_1fr]'>
+      <ProfileCard client:visible locale={locale} />
+      <PricingCard locale={locale} />
+    </div>
+  </div>
+</section>
