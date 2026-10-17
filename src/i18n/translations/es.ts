@@ -41,13 +41,13 @@ export const es: Dictionary = {
   },
 
   hero: {
+    greeting: 'Hola, soy',
     name: 'Laura',
     role: 'Desarrolladora Web Senior',
     subtitle: 'Especialista en WordPress y E-commerce',
     intro:
       'Creo, personalizo y optimizo sitios web y tiendas en línea con WordPress, Elementor, WooCommerce y Shopify, combinando desarrollo práctico con una sólida base de ingeniería.',
-    downloadCv: 'Descargar CV',
-    cardAlt: 'Tarjeta de perfil de Laura Díaz Pérez'
+    downloadCv: 'Descargar CV'
   },
 
   about: {
@@ -56,18 +56,7 @@ export const es: Dictionary = {
     summary:
       'Desarrolladora Web Senior con más de 5 años de experiencia creando, personalizando y optimizando sitios web y tiendas de e-commerce. Dominio de HTML, CSS, JavaScript, PHP, WordPress, Elementor, WooCommerce, Shopify y SEO.',
     summary2:
-      'Con formación en Ingeniería en Automática y Control, combino la práctica del desarrollo con una mentalidad técnica y estructurada. Busco oportunidades senior en remoto con empresas internacionales, agencias y equipos distribuidos.',
-    music: { artist: 'Lofi Girl', track: 'Beats para concentrarse' },
-    folder: { title: 'Cuba', photos: '4 fotos' },
-    note: {
-      grab: 'Tómalo y recibe una sorpresa',
-      again: '¿Lo intentaste de nuevo? Sigue así',
-      one: 'Sigue pasando el cursor…',
-      four: '¡Eres persistente!',
-      five: '¡Ja, los encontraste todos!',
-      end: 'Vale, me rindo',
-      title: 'Tengo una sorpresa para ti'
-    }
+      'Con formación en Ingeniería en Automática y Control, combino la práctica del desarrollo con una mentalidad técnica y estructurada. Busco oportunidades senior en remoto con empresas internacionales, agencias y equipos distribuidos.'
   },
 
   skills: {
@@ -129,6 +118,15 @@ export const es: Dictionary = {
         achievement: 'Más de 40 proyectos de WordPress y e-commerce para clientes internacionales',
         description:
           'Desarrollo, personalizo y mantengo sitios web y tiendas en línea con WordPress, Elementor, HTML, CSS, JavaScript y PHP. Creo soluciones e-commerce con WooCommerce y Shopify y aplico SEO y optimización para mejorar la visibilidad y la velocidad.'
+      },
+      {
+        company: '2mas2websites',
+        role: 'Desarrolladora Web',
+        period: 'Actual',
+        status: 'En curso',
+        achievement: 'Sitios web para una agencia de marketing digital española en la Costa Tropical',
+        description:
+          'Desarrollo y mantengo sitios web para 2mas2websites, una agencia de marketing digital de la Costa Tropical (España): sitios en WordPress, landing pages, e-commerce, SEO y rendimiento junto al equipo de marketing.'
       },
       {
         company: 'Proyectos E-commerce',

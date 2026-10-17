@@ -1,6 +1,5 @@
 import { useEffect, useRef, useState } from 'react'
 
-import { isIdCardHover } from '@/lib/id-card-cursor'
 import { cn } from '@/lib/utils'
 
 const CURSOR_INTERACTIVE_SELECTOR =
@@ -30,9 +29,7 @@ const CustomCursor = () => {
     const handlePointerMove = (event: PointerEvent) => {
       positionRef.current = { x: event.clientX, y: event.clientY }
       setIsVisible(true)
-      setIsPointer(
-        Boolean((event.target as HTMLElement | null)?.closest(CURSOR_INTERACTIVE_SELECTOR)) || isIdCardHover()
-      )
+      setIsPointer(Boolean((event.target as HTMLElement | null)?.closest(CURSOR_INTERACTIVE_SELECTOR)))
     }
 
     const handlePointerLeave = () => setIsVisible(false)

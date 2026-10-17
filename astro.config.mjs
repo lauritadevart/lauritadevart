@@ -7,7 +7,7 @@ import react from '@astrojs/react'
 
 export default defineConfig({
   // Set the SITE_URL env var (or this fallback) to your real Netlify domain before deploying.
-  site: process.env.SITE_URL || 'https://lauradiaz.netlify.app',
+  site: process.env.SITE_URL || 'https://lauritadevart.netlify.app',
   i18n: {
     defaultLocale: 'en',
     locales: ['en', 'es'],
@@ -70,21 +70,12 @@ export default defineConfig({
       noExternal: ['@radix-ui/*']
     },
 
-    // Pre-bundle the r3f/three stack up front so Vite never re-optimizes it mid-session — a
-    // mid-session re-optimize swaps in a new module instance with a fresh React context, which
-    // makes IdCard's Band throw "Hooks can only be used within the Canvas component!" even
-    // though it's still rendered inside <Canvas>.
-    // `<ClientRouter />` pulls these in through the `astro:transitions` virtual
-    // module, which Vite's initial dep scan can't see. Without pre-declaring
-    // them the optimizer re-runs on the first page load, changes its
-    // browserHash mid-flight and 504s any module already served under the old
-    // one ("Outdated Optimize Dep").
+    // Pre-declare the `astro:transitions` virtual modules so Vite's dep optimizer never
+    // re-runs mid-session (a re-optimize changes its browserHash and 504s any module already
+    // served under the old one). `<ClientRouter />` pulls these in, which Vite's initial
+    // dependency scan can't see.
     optimizeDeps: {
       include: [
-        'three',
-        '@react-three/fiber',
-        '@react-three/drei',
-        '@react-three/rapier',
         'astro/virtual-modules/transitions-router.js',
         'astro/virtual-modules/transitions-types.js',
         'astro/virtual-modules/transitions-events.js',

@@ -4,7 +4,7 @@
 // TODO(personal): replace with your real production domain before deploying (see new.md).
 // Netlify will assign you a *.netlify.app URL — set the SITE_URL env var (or update this
 // fallback) to your real domain so canonical URLs and the sitemap are correct.
-export const SITE_URL = process.env.SITE_URL || 'https://lauradiaz.netlify.app'
+export const SITE_URL = process.env.SITE_URL || 'https://lauritadevart.netlify.app'
 
 // Personal info — edit these with your real contact details (placeholders marked with TODO).
 export const AUTHOR = {
@@ -20,12 +20,24 @@ export const AUTHOR = {
   whatsapp: 'https://wa.me/5355283038'
 }
 
+// Downloadable documents — real files live in public/documents/.
+export const DOWNLOADS = {
+  cv: {
+    en: '/documents/Laura_Diaz_Perez_CV_English.pdf',
+    es: '/documents/Laura_Diaz_Perez_CV_Espanol.pdf'
+  },
+  thesis: {
+    en: '/documents/Laura_Diaz_Perez_Tesis_English.pdf',
+    es: '/documents/Laura_Diaz_Perez_Tesis_Espanol.pdf'
+  }
+} as const
+
 // Site title & description (English defaults; Spanish handled via i18n dictionaries).
 export const SITE_TITLE = 'Laura Díaz Pérez — Senior Web Developer & E-commerce Specialist'
 export const SITE_DESCRIPTION =
   'Senior Web Developer with 5+ years of experience building and optimizing websites and online stores with WordPress, Elementor, WooCommerce, Shopify, and SEO. Available for remote international work.'
 
-export const GITHUB_URL = 'https://github.com/lauradiaz' // TODO(personal)
+export const GITHUB_URL = 'https://github.com/lauritadevart'
 export const INSTAGRAM_URL = 'https://instagram.com/lauradiaz' // TODO(personal)
 export const TWITTER_URL = 'https://twitter.com/lauradiaz' // TODO(personal)
 

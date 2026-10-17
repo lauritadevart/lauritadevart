@@ -39,13 +39,13 @@ export const en = {
   },
 
   hero: {
+    greeting: 'Hello, I am',
     name: 'Laura',
     role: 'Senior Web Developer',
     subtitle: 'WordPress & E-commerce Specialist',
     intro:
       "I build, customize, and optimize websites and online stores with WordPress, Elementor, WooCommerce, and Shopify — combining hands-on development with a strong engineering foundation.",
-    downloadCv: 'Download CV',
-    cardAlt: "Laura Díaz Pérez's profile card"
+    downloadCv: 'Download CV'
   },
 
   about: {
@@ -54,18 +54,7 @@ export const en = {
     summary:
       'Senior Web Developer with 5+ years of experience creating, customizing, and optimizing websites and e-commerce stores. Proficient across HTML, CSS, JavaScript, PHP, WordPress, Elementor, WooCommerce, Shopify, and SEO.',
     summary2:
-      'With an academic background in Automation Engineering, I pair practical development skill with structured, technical problem-solving. I am seeking remote senior opportunities with international companies, agencies, and distributed teams.',
-    music: { artist: 'Lofi Girl', track: 'Deep Focus Beats' },
-    folder: { title: 'Cuba', photos: '4 photos' },
-    note: {
-      grab: 'Grab it and get a surprise',
-      again: 'Did you try again? Keep going',
-      one: 'Keep hovering…',
-      four: "You're persistent!",
-      five: 'Haha, you found them all!',
-      end: 'Okay, I give up',
-      title: 'I have a surprise for you'
-    }
+      'With an academic background in Automation Engineering, I pair practical development skill with structured, technical problem-solving. I am seeking remote senior opportunities with international companies, agencies, and distributed teams.'
   },
 
   skills: {
@@ -127,6 +116,15 @@ export const en = {
         achievement: 'Delivered 40+ WordPress & e-commerce projects for international clients',
         description:
           'Develop, customize, and maintain websites and online stores with WordPress, Elementor, HTML, CSS, JavaScript, and PHP. Build e-commerce solutions on WooCommerce and Shopify and apply SEO and optimization to improve visibility and speed.'
+      },
+      {
+        company: '2mas2websites',
+        role: 'Web Developer',
+        period: 'Present',
+        status: 'Ongoing',
+        achievement: 'Client websites for a Spanish digital marketing agency on the Costa Tropical',
+        description:
+          'Develop and maintain client websites for 2mas2websites, a digital marketing agency on the Costa Tropical of Spain — WordPress builds, landing pages, e-commerce, SEO, and performance work alongside the marketing team.'
       },
       {
         company: 'E-commerce Projects',

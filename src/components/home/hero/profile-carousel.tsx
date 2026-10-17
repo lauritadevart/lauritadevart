@@ -18,12 +18,12 @@ const ProfileCarousel = () => {
   const goNext = () => setIndex(prev => (prev + 1) % IMAGES.length)
 
   return (
-    <div className='relative row-span-2 h-130 overflow-hidden rounded-[24px]'>
+    <div className='relative aspect-square w-full overflow-hidden rounded-[24px]'>
       {IMAGES.map((src, i) => (
         <img
           key={src}
           src={src}
-          alt='profile images'
+          alt='Laura Díaz Pérez'
           className={cn(
             'absolute inset-0 size-full object-cover transition-opacity duration-500',
             i === index ? 'opacity-100' : 'opacity-0'

@@ -1,6 +1,7 @@
 import { ArrowRightIcon } from 'lucide-react'
 
 import { Button } from '@/components/ui/button'
+import { DOWNLOADS } from '@/consts'
 import { useTranslations, type Locale } from '@/i18n'
 
 type HeroCtaProps = {
@@ -10,10 +11,9 @@ type HeroCtaProps = {
 const HeroCta = ({ locale = 'en' }: HeroCtaProps) => {
   const t = useTranslations(locale)
 
-  // No dedicated contact page: CTAs anchor to the booking form (which sends via WhatsApp)
-  // and to the credentials block (CV + thesis downloads).
+  // No dedicated contact page: the main CTA scrolls to the booking form (sends via WhatsApp).
   const contactHref = '#select-service'
-  const cvHref = '#credentials'
+  const cvHref = DOWNLOADS.cv[locale]
 
   return (
     <div className='flex flex-wrap items-center gap-2.5 pt-2'>
@@ -29,7 +29,7 @@ const HeroCta = ({ locale = 'en' }: HeroCtaProps) => {
         variant='outline'
         className='hover:bg-card bg-card dark:bg-card hover:text-accent group/button h-11 gap-2.5 rounded-full pr-4 pl-4 text-base shadow-sm transition-[padding] duration-300 hover:pl-2'
         render={
-          <a href={cvHref}>
+          <a href={cvHref} download>
             <span className='bg-accent relative flex size-2.5 items-center justify-center overflow-hidden rounded-full transition-all duration-300 group-hover/button:size-6.5'>
               <ArrowRightIcon className='text-accent-foreground absolute size-4.5 -translate-x-3 opacity-0 transition-all duration-300 group-hover/button:translate-x-0 group-hover/button:opacity-100' />
             </span>

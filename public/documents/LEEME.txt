@@ -1,10 +1,11 @@
 # Documents
 
-Coloca aquí (dentro de esta carpeta) tus PDFs con exactamente estos nombres:
+Archivos reales enlazados desde el sitio (rutas definidas en src/consts.ts → DOWNLOADS):
 
-- `tesis-ingenieria-automatica.pdf` — tu Tesis de la Ingeniería en Automática
-  (enlazada desde la sección "Sobre mí" → Credenciales).
-- `lauradiaz-cv.pdf`…: no — el nombre usado en el sitio es:
-- `laura-diaz-cv.pdf` — tu CV (botón "Descargar CV" del hero y de Credenciales).
+- Laura_Diaz_Perez_CV_English.pdf  — CV en inglés (botón "Download CV" del hero y de Credenciales)
+- Laura_Diaz_Perez_CV_Espanol.pdf  — CV en español (botón "Descargar CV" del hero y de Credenciales)
+- Laura_Diaz_Perez_Tesis_Espanol.pdf — Tesis de Ingeniería en Automática (español)
+- Laura_Diaz_Perez_Tesis_English.pdf — Thesis in Automation Engineering (english version)
 
-Estos archivos se copian tal cual a la carpeta publicada (`dist/`) en cada build.
+Si renombras algún PDF, actualiza DOWNLOADS en src/consts.ts.
+Estos archivos se copian tal cual a la carpeta publicada (dist/) en cada build.

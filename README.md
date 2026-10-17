@@ -2,17 +2,16 @@
 
 🇪🇸 <a href="./README.es.md">Ver en Español</a> &nbsp;·&nbsp; 🇬🇧 <b>English</b>
 
-# 👋 Hi, I'm Laura Díaz Pérez
+# Hi, I'm Laura Díaz Pérez
 
 ### Senior Web Developer · WordPress & E-commerce Specialist
 
-[![Portfolio](https://img.shields.io/badge/Portfolio-0A66C2?style=for-the-badge&logo=google-chrome&logoColor=white)](https://your-portfolio-url.com)
-[![Email](https://img.shields.io/badge/Email-D14031?style=for-the-badge&logo=gmail&logoColor=white)](mailto:your-professional-email@example.com)
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/your-profile)
+[![Portfolio](https://img.shields.io/badge/Portfolio-E0479B?style=for-the-badge&logo=google-chrome&logoColor=white)](https://lauritadevart.netlify.app)
+[![Email](https://img.shields.io/badge/Email-D14031?style=for-the-badge&logo=gmail&logoColor=white)](mailto:lauritadevart@gmail.com)
 [![Location](https://img.shields.io/badge/Location-Cuba-2ea44f?style=for-the-badge&logo=google-maps&logoColor=white)](https://maps.google.com/?q=Cuba)
 [![Availability](https://img.shields.io/badge/Status-Open%20to%20Remote%20Work-brightgreen?style=for-the-badge)](#-contact-me)
 
-<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=26&duration=3000&pause=1000&color=58A6FF&center=true&vCenter=true&width=600&height=40&lines=Senior+Web+Developer;WordPress+%26+Elementor+Expert;WooCommerce+%26+Shopify+E-commerce;SEO+%26+Performance+Optimization" alt="Typing SVG" />
+<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=26&duration=3000&pause=1000&color=E0479B&center=true&vCenter=true&width=600&height=40&lines=Senior+Web+Developer;WordPress+%26+Elementor+Expert;WooCommerce+%26+Shopify+E-commerce;SEO+%26+Performance+Optimization" alt="Typing SVG" />
 
 </div>
 
@@ -20,9 +19,10 @@
 
 ## 🧑‍💻 About Me
 
-Senior Web Developer with **5+ years of experience** designing, building, and optimizing websites and online stores. I specialize in **WordPress, Elementor, WooCommerce, and Shopify**, combining hands-on development skill with a strong technical foundation from a degree in **Automation Engineering**.
+Senior Web Developer with **5+ years of experience** designing, building, and optimizing websites and online stores. I specialize in **WordPress, Elementor, WooCommerce, and Shopify**, combining hands-on development skill with a strong technical foundation from a degree in **Automation Engineering (CUJAE, 2025)**.
 
 - 🌍 Seeking **remote senior-level opportunities** with international companies, agencies, and distributed teams
+- 🏢 Currently developing client websites at **[2mas2websites](https://2mas2websites.com)**, a digital marketing agency on the Costa Tropical of Spain
 - ⚡ I build fast, maintainable, SEO-friendly websites that convert
 - 🔧 From custom theme/plugin development to full e-commerce setups
 - 📫 Always open to discussing new projects, roles, or collaborations
@@ -39,6 +39,10 @@ Senior Web Developer with **5+ years of experience** designing, building, and op
 <br>
 <img src="https://skillicons.dev/icons?i=wordpress,shopify,figma,vscode" alt="WordPress, Shopify, Figma, VS Code" />
 
+**Modern Frameworks**
+<br>
+<img src="https://skillicons.dev/icons?i=astro,react,nextjs,tailwind,typescript" alt="Astro, React, Next.js, Tailwind CSS, TypeScript" />
+
 **Languages & Tools**
 <br>
 <img src="https://skillicons.dev/icons?i=c,cpp,git,github,linux,photoshop" alt="C, C++, Git, GitHub, Linux, Photoshop" />
@@ -49,14 +53,21 @@ Senior Web Developer with **5+ years of experience** designing, building, and op
 | 📝 **WordPress** | WordPress, Elementor, theme & plugin customization, site maintenance, performance tuning |
 | 🛒 **E-commerce** | WooCommerce, Shopify, store setup, product catalogs, payment & checkout optimization |
 | 🔍 **SEO** | On-page SEO, technical SEO, site structure, Core Web Vitals, content optimization |
+| ⚛️ **Modern Frameworks** | Astro, React, Next.js, Tailwind CSS, TypeScript, Vite |
 | 💻 **Programming** | C, C++, C#, automation & technical problem-solving |
 
 ---
 
 ## 💼 Experience
 
+**Web Developer** · [2mas2websites](https://2mas2websites.com) — digital marketing agency, Costa Tropical (Spain)
+`Present`
+
+- Develop and maintain client websites for the agency: **WordPress builds, landing pages, e-commerce, SEO, and performance work**
+- Deliver marketing-focused websites alongside the strategy and content team
+
 **Web Developer** · Freelance / Contract
-`20XX – Present`
+`2020 – Present`
 
 - Develop and customize websites with **WordPress, Elementor, HTML, CSS, JavaScript, and PHP** for diverse clients
 - Build and maintain production websites aligned with business goals and client requirements
@@ -64,14 +75,13 @@ Senior Web Developer with **5+ years of experience** designing, building, and op
 - Apply **on-page SEO and optimization techniques** that improve visibility and site speed
 - Own projects end-to-end: requirements, development, testing, deployment, and handoff
 
-> 📌 *Replace this section with your real companies, dates, and measurable results (e.g., "rebuilt a WooCommerce store that improved load time by 40%"). Quantified achievements dramatically improve your chances with recruiters.*
-
 ---
 
 ## 🎓 Education
 
-**Degree in Automation Engineering**
-Universidad Tecnológica de La Habana José Antonio Echeverría (CUJAE), Cuba — `20XX`
+**Degree in Automation Engineering** — `2025`
+Universidad Tecnológica de La Habana José Antonio Echeverría (CUJAE), Cuba.
+My final degree thesis is available for download on [my portfolio](https://lauritadevart.netlify.app#credentials).
 
 ---
 
@@ -87,10 +97,8 @@ Universidad Tecnológica de La Habana José Antonio Echeverría (CUJAE), Cuba �
 ## 📊 GitHub Stats
 
 <div align="center">
-  <img height="180em" src="https://github-readme-stats.vercel.app/api?username=YOUR_USERNAME&show_icons=true&hide_border=true&bg_color=0d1117&title_color=58A6FF&icon_color=79C0FF&text_color=c9d1d9&rank_icon=github" alt="GitHub stats" />
-  <img height="180em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=YOUR_USERNAME&layout=compact&hide_border=true&bg_color=0d1117&title_color=58A6FF&text_color=c9d1d9" alt="Top languages" />
-  <br>
-  <img src="https://github-readme-activity-graph.vercel.app/graph?username=YOUR_USERNAME&bg_color=0d1117&color=c9d1d9&line=58A6FF&point=79C0FF&hide_border=true" alt="Activity graph" width="100%" />
+  <img height="180em" src="https://github-readme-stats.vercel.app/api?username=lauritadevart&show_icons=true&hide_border=true&bg_color=0d1117&title_color=E0479B&icon_color=FF7BC5&text_color=c9d1d9&rank_icon=github" alt="GitHub stats" />
+  <img height="180em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=lauritadevart&layout=compact&hide_border=true&bg_color=0d1117&title_color=E0479B&text_color=c9d1d9" alt="Top languages" />
 </div>
 
 ---
@@ -101,7 +109,7 @@ Universidad Tecnológica de La Habana José Antonio Echeverría (CUJAE), Cuba �
 - ✅ Specialist in **WordPress + Elementor** custom development
 - ✅ Full **e-commerce** expertise: WooCommerce & Shopify
 - ✅ SEO-driven approach — sites built to rank and convert
-- ✅ Engineering background → structured, problem-solving mindset
+- ✅ Engineering background (CUJAE, 2025) → structured, problem-solving mindset
 - ✅ **Remote-ready**: comfortable with international teams and async communication
 
 ---
@@ -110,12 +118,12 @@ Universidad Tecnológica de La Habana José Antonio Echeverría (CUJAE), Cuba �
 
 <div align="center">
 
-[![Email](https://img.shields.io/badge/Send%20an%20Email-D14031?style=for-the-badge&logo=gmail&logoColor=white)](mailto:your-professional-email@example.com)
-[![WhatsApp](https://img.shields.io/badge/WhatsApp-25D366?style=for-the-badge&logo=whatsapp&logoColor=white)](https://wa.me/53XXXXXXXXX)
-[![Portfolio](https://img.shields.io/badge/View%20Portfolio-0A66C2?style=for-the-badge&logo=google-chrome&logoColor=white)](https://your-portfolio-url.com)
-[![LinkedIn](https://img.shields.io/badge/Connect%20on%20LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/your-profile)
+[![Email](https://img.shields.io/badge/Send%20an%20Email-D14031?style=for-the-badge&logo=gmail&logoColor=white)](mailto:lauritadevart@gmail.com)
+[![WhatsApp](https://img.shields.io/badge/WhatsApp-25D366?style=for-the-badge&logo=whatsapp&logoColor=white)](https://wa.me/5355283038)
+[![Portfolio](https://img.shields.io/badge/View%20Portfolio-E0479B?style=for-the-badge&logo=google-chrome&logoColor=white)](https://lauritadevart.netlify.app)
+[![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/lauritadevart)
 
-💬 **Available for remote senior web development roles and freelance projects worldwide.**
+💬 **Available for remote senior web development roles and freelance projects worldwide.** Book a service directly from the portfolio — it opens WhatsApp with your details.
 
 </div>
 
@@ -123,8 +131,8 @@ Universidad Tecnológica de La Habana José Antonio Echeverría (CUJAE), Cuba �
 
 <div align="center">
 
-![Profile Views](https://komarev.com/ghpvc/?username=YOUR_USERNAME&color=0A66C2&style=for-the-badge)
+![Profile Views](https://komarev.com/ghpvc/?username=lauritadevart&color=E0479B&style=for-the-badge)
 
-*⚡ Last updated: October 2026*
+*Last updated: October 2026*
 
 </div>
