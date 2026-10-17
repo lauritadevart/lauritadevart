@@ -1,7 +1,8 @@
 import { useEffect, useRef, useState } from 'react'
 import type { ReactNode } from 'react'
 
-import { type MotionValue, motion, useScroll, useSpring, useTransform } from 'motion/react'
+import type { MotionValue } from 'motion/react'
+import { motion, useScroll, useTransform } from 'motion/react'
 
 import { cn } from '@/lib/utils'
 
@@ -13,6 +14,12 @@ export type TimelineEntry = {
 // How much higher the content sits compared to its number, in pixels
 const CONTENT_LIFT = 12
 
+// Entrance animation for a timeline row. It is driven by IntersectionObserver (whileInView)
+// instead of a scroll-linked motion value: the old opacity-from-scroll approach left rows at
+// opacity 0 whenever the page loaded already scrolled (anchor jumps, restored scroll position,
+// client-side route changes), which made the section intermittently blank.
+const ROW_VIEWPORT = { once: true, amount: 0.1 } as const
+
 type TimelineRowProps = TimelineEntry & {
   isLast: boolean
   rowRef: (node: HTMLDivElement | null) => void
@@ -21,16 +28,6 @@ type TimelineRowProps = TimelineEntry & {
 
 const TimelineRow = ({ index, content, isLast, rowRef, indexRef }: TimelineRowProps) => {
   const localRowRef = useRef<HTMLDivElement>(null)
-
-  const { scrollYProgress } = useScroll({
-    target: localRowRef,
-    offset: ['start 70%', 'start 45%']
-  })
-
-  const progress = useSpring(scrollYProgress, { stiffness: 120, damping: 20, mass: 0.5 })
-  const opacity = useTransform(progress, [0, 1], [0, 1])
-  const y = useTransform(progress, [0, 1], [64, 0])
-  const contentY = useTransform(progress, [0, 1], [64 - CONTENT_LIFT, -CONTENT_LIFT])
 
   return (
     <div
@@ -42,12 +39,21 @@ const TimelineRow = ({ index, content, isLast, rowRef, indexRef }: TimelineRowPr
     >
       <motion.div
         ref={indexRef}
-        style={{ opacity, y }}
+        initial={{ opacity: 0, y: 64 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={ROW_VIEWPORT}
+        transition={{ duration: 0.5, ease: 'easeOut' }}
         className='text-muted-foreground absolute left-8 w-fit -translate-x-1/2 px-1 text-center text-lg italic sm:left-14 sm:text-[22px]'
       >
         {index}
       </motion.div>
-      <motion.div style={{ opacity, y: contentY }} className='min-w-0 pl-16 sm:pl-39'>
+      <motion.div
+        initial={{ opacity: 0, y: 64 - CONTENT_LIFT }}
+        whileInView={{ opacity: 1, y: -CONTENT_LIFT }}
+        viewport={ROW_VIEWPORT}
+        transition={{ duration: 0.5, ease: 'easeOut' }}
+        className='min-w-0 pl-16 sm:pl-39'
+      >
         {content}
       </motion.div>
     </div>

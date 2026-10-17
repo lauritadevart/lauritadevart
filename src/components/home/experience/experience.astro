@@ -22,6 +22,8 @@ const t = useTranslations(locale)
     <!-- client:only — cells are randomized per render; SSR + hydration would mismatch -->
     <ActivityCard client:only='react' locale={locale} />
 
-    <ExperienceTimeline client:visible locale={locale} />
+    <!-- client:load — the timeline rows reveal with whileInView, so hydration must not wait
+         on visibility: on anchor jumps / restored scroll positions the section stayed blank. -->
+    <ExperienceTimeline client:load locale={locale} />
   </div>
 </section>
