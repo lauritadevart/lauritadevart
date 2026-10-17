@@ -43,12 +43,6 @@
       "short_name": "Home",
       "description": "Go to homepage",
       "url": "/"
-    },
-    {
-      "name": "Contact",
-      "short_name": "Contact",
-      "description": "Get in touch",
-      "url": "/contact"
     }
   ]
 }

@@ -35,7 +35,7 @@ const ScrollProfileToast = ({ pathname, locale = 'en' }: ScrollProfileToastProps
   const goHome = () => {
     // Already home — a location.href reassignment to the same URL reloads the page and the
     // browser's scroll restoration snaps it right back to the pre-click position, so just
-    // scroll instead. Only other pages (e.g. /contact) need a real navigation.
+    // scroll instead. Any other page needs a real navigation.
     if (pathname === homePath) {
       window.scrollTo({ top: 0, behavior: 'smooth' })
     } else {

@@ -1,0 +1,10 @@
+# Documents
+
+Coloca aquí (dentro de esta carpeta) tus PDFs con exactamente estos nombres:
+
+- `tesis-ingenieria-automatica.pdf` — tu Tesis de la Ingeniería en Automática
+  (enlazada desde la sección "Sobre mí" → Credenciales).
+- `lauradiaz-cv.pdf`…: no — el nombre usado en el sitio es:
+- `laura-diaz-cv.pdf` — tu CV (botón "Descargar CV" del hero y de Credenciales).
+
+Estos archivos se copian tal cual a la carpeta publicada (`dist/`) en cada build.

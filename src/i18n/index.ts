@@ -23,7 +23,7 @@ export function localeFromPath(pathname: string): Locale {
   return (LOCALES as readonly string[]).includes(segment) ? (segment as Locale) : DEFAULT_LOCALE
 }
 
-// Strip the locale prefix from a pathname ("/es/contact" -> "/contact", "/es" -> "/").
+// Strip the locale prefix from a pathname ("/es/case-study/x" -> "/case-study/x", "/es" -> "/").
 export function stripLocale(pathname: string, locale: Locale): string {
   const segments = pathname.split('/').filter(Boolean)
   if (segments[0] === locale) segments.shift()
@@ -31,7 +31,7 @@ export function stripLocale(pathname: string, locale: Locale): string {
   return rest ? `/${rest}` : '/'
 }
 
-// Build the equivalent path in the other locale ("/contact" -> "/es/contact").
+// Build the equivalent path in the other locale ("/case-study/x" -> "/es/case-study/x").
 export function localizePath(pathname: string, target: Locale): string {
   const clean = stripLocale(pathname, localeFromPath(pathname))
   if (target === DEFAULT_LOCALE) return clean

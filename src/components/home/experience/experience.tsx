@@ -20,7 +20,9 @@ const ExperienceTimeline = ({ locale = 'en' }: ExperienceTimelineProps) => {
     status: { text: item.status, tone: (index === 0 ? 'positive' : 'accent') as 'positive' | 'accent' },
     stack: t.skills.categories.map(c => c.name).slice(index, index + 4),
     achievement: item.achievement,
-    description: item.description
+    description: item.description,
+    // The Automation Engineering degree gets a highlighted treatment in the timeline.
+    highlight: item.company === 'CUJAE'
   }))
 
   return (

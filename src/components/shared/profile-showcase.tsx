@@ -4,7 +4,6 @@ import { motion, useMotionValue, useSpring, useTransform } from 'motion/react'
 
 import GithubIcon from '@/assets/svg/github-icon'
 import InstagramIcon from '@/assets/svg/instagram-icon'
-import LinkedinIcon from '@/assets/svg/linkedin-icon'
 
 import { Button } from '@/components/ui/button'
 import AvailabilityBadge from '@/components/shared/availability-badge'
@@ -15,7 +14,6 @@ import { cn } from '@/lib/utils'
 
 const SOCIALS = [
   { label: 'GitHub', icon: GithubIcon, href: SOCIAL_LINKS.github },
-  { label: 'LinkedIn', icon: LinkedinIcon, href: SOCIAL_LINKS.linkedin },
   { label: 'Instagram', icon: InstagramIcon, href: SOCIAL_LINKS.instagram }
 ]
 

@@ -5,6 +5,7 @@ import ProfileCarousel from '@/components/home/about/profile-carousel'
 import MusicPlayerCard from '@/components/home/about/music-player-card'
 import TripFolderCard from '@/components/home/about/trip-folder-card'
 import SurpriseNote from '@/components/home/about/surprise-note'
+import Credentials from '@/components/home/about/credentials.astro'
 import { useTranslations, type Locale } from '@/i18n'
 
 interface Props {
@@ -44,5 +45,7 @@ const t = useTranslations(locale)
       <p class='text-muted-foreground'>{t.about.summary}</p>
       <p class='text-muted-foreground'>{t.about.summary2}</p>
     </div>
+
+    <Credentials locale={locale} />
   </div>
 </section>

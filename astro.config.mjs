@@ -6,7 +6,8 @@ import mdx from '@astrojs/mdx'
 import react from '@astrojs/react'
 
 export default defineConfig({
-  site: process.env.SITE_URL || 'https://laura-diaz-portfolio.vercel.app',
+  // Set the SITE_URL env var (or this fallback) to your real Netlify domain before deploying.
+  site: process.env.SITE_URL || 'https://lauradiaz.netlify.app',
   i18n: {
     defaultLocale: 'en',
     locales: ['en', 'es'],
@@ -41,13 +42,6 @@ export default defineConfig({
           // @ts-expect-error - Valid sitemap changefreq value
           item.changefreq = 'monthly'
           item.priority = 0.8
-        }
-
-        // Contact page
-        else if (item.url.includes('/contact')) {
-          // @ts-expect-error - Valid sitemap changefreq value
-          item.changefreq = 'monthly'
-          item.priority = 0.7
         }
 
         // All other pages

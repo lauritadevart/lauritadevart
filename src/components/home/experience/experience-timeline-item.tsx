@@ -11,6 +11,7 @@ type ExperienceTimelineItemProps = {
   stack: string[]
   achievement: string
   description: string
+  highlight?: boolean
 }
 
 const ExperienceTimelineItem = ({
@@ -21,10 +22,16 @@ const ExperienceTimelineItem = ({
   status,
   stack,
   achievement,
-  description
+  description,
+  highlight = false
 }: ExperienceTimelineItemProps) => {
   return (
-    <div className='space-y-4'>
+    <div
+      className={cn(
+        'space-y-4',
+        highlight && 'ring-accent/40 bg-accent/5 rounded-2xl p-4 ring-1 sm:p-5'
+      )}
+    >
       <div className='mb-6 flex items-center gap-3'>
         <div className='bg-card flex size-13.5 shrink-0 items-center justify-center rounded-md sm:size-14'>
           <img src={logo} alt={`${company} logo`} className='size-11.5' />
