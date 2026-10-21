@@ -44,5 +44,8 @@ build/
 .DS_Store
 *.pem
 
+# thesis translation scratch (intermediate figure crops)
+.thesis-work/figs/
+
 # jetbrains setting folder
 .idea/
